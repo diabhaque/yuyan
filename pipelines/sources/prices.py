@@ -1,5 +1,6 @@
 """Daily adjusted-close prices for MAGS / SMH / DRAM constituents (via Yahoo)."""
 
+import polars as pl
 import yfinance as yf
 
 from ..base import Pipeline
@@ -37,17 +38,20 @@ class PricesPipeline(Pipeline):
         data = yf.download(self.tickers, period="max", auto_adjust=True, progress=False)
         close = data["Close"]  # date index, one column per ticker (adjusted close)
 
+        currency = {t: currency_of(t) for t in self.tickers}
         long = (
-            close.reset_index()
-            .melt(id_vars="Date", var_name="primary_id", value_name="value")
-            .rename(columns={"Date": "TS"})
-            .dropna(subset=["value"])
+            pl.from_pandas(close.reset_index())  # yfinance is pandas; cross to polars here
+            .unpivot(index="Date", variable_name="primary_id", value_name="value")
+            .drop_nulls("value")
+            .with_columns(
+                pl.col("Date").dt.strftime("%Y-%m-%d").alias("TS"),
+                pl.col("primary_id").replace(currency).alias("currency"),
+            )
+            .select("TS", "primary_id", "value", "currency")
         )
-        long["TS"] = long["TS"].dt.strftime("%Y-%m-%d")
-        long["currency"] = long["primary_id"].map(currency_of)
 
         missing = [t for t in self.tickers if t not in close.columns or close[t].isna().all()]
         if missing:
             print(f"prices: no data for {missing}")
 
-        return long[["TS", "primary_id", "value", "currency"]]
+        return long
