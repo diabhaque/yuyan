@@ -12,5 +12,8 @@ wheels/
 # Pipeline data outputs
 data/
 
+# Raw downloaded data (reproducible via pipelines)
+raw_data/
+
 # Local Claude Code settings
 .claude/settings.local.json
