@@ -1,0 +1,9 @@
+source,family,type,period,url,as_of,component,metric,value
+TSMC,A,hard,Q1 2026,https://pr.tsmc.com/english/news/3294,2026-04-10,"Logic,Packaging",Q1 2026 revenue,US$35.90B (+40.6% YoY)
+SK hynix,A,hard,Q1 2026,https://news.skhynix.com/q1-2026-business-results/,2026-04-23,Memory,Q1 2026 revenue,"KRW 52.58T (+198% YoY, +60% QoQ)"
+Micron,A,hard,"FQ2'26 (ended ~Feb 2026, offset)",https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-second-quarter-fiscal-2026,2026-03-18,Memory,FQ2 2026 revenue,~+196% YoY (~tripled)
+Samsung,A,qualitative,Q1 2026,https://news.samsung.com/global/samsung-electronics-announces-first-quarter-2026-results,2026-04-30,Memory,Q1 2026 semiconductor profit,memory op profit ~50x YoY
+NVIDIA,A,qualitative,"FQ1'27 (~Feb-Apr 2026, offset)",https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027,2026-05-20,"Logic,Auxiliary",Q1 FY2027 revenue,"US$81.6B total (+85% YoY); Data Center ~90% (~$73B), ~2x YoY"
+TrendForce,B,hard-price,Q1 2026,https://www.trendforce.com/presscenter/news/20260202-12911.html,2026-02-02,Memory,Q1 2026 DRAM contract price QoQ,~+95% DRAM; NAND up; HBM tight (LTA)
+Korea MOTIE/customs,C,macro,Mar 2026,https://en.sedaily.com/finance/2026/04/01/semiconductor-power-defies-war-monthly-exports-head-toward,2026-04-01,all,Mar 2026 semiconductor exports YoY,~+200% (through 20th); record monthly exports
+FRED IPG3344S,C,macro,monthly,https://fred.stlouisfed.org/series/IPG3344S,fetched at runtime,all,US semiconductor industrial production index,<fetched live>
