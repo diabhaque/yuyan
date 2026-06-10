@@ -1,4 +1,4 @@
-"""Download each Epoch dataset to raw_data/, then write a cleaned copy to data/."""
+"""Download each Epoch dataset to data/raw/, then write a cleaned copy to data/processed/."""
 
 import time
 from pathlib import Path
@@ -9,8 +9,8 @@ from . import download
 from .datasets import EpochDataset
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-RAW_DIR = ROOT / "raw_data" / "epoch_ai"
-CLEAN_DIR = ROOT / "data" / "epoch_ai"
+RAW_DIR = ROOT / "data" / "raw" / "epoch_ai"
+CLEAN_DIR = ROOT / "data" / "processed" / "epoch_ai"
 DELAY_S = 1.5  # be polite between network calls
 
 

@@ -8,7 +8,7 @@ import polars as pl
 
 CORE = ["TS", "primary_id", "value", "TS_RECORDED"]
 REQUIRED = ["TS", "primary_id", "value"]  # what fetch() must supply
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "processed"
 
 
 class Pipeline(ABC):

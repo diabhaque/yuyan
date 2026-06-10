@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 MANIFEST = ROOT / "datasources" / "epoch_ai.csv"
 
 PLAN = {
-    "zip": "Download ZIP, extract CSV(s) to raw_data, clean to data",
-    "csv": "Download CSV directly to raw_data, clean to data",
-    "github": "Fetch repo tarball, copy data files to raw_data, clean CSVs to data",
+    "zip": "Download ZIP, extract CSV(s) to data/raw, clean to data/processed",
+    "csv": "Download CSV directly to data/raw, clean to data/processed",
+    "github": "Fetch repo tarball, copy data files to data/raw, clean CSVs to data/processed",
 }
 
 

@@ -9,11 +9,8 @@ wheels/
 # Virtual environments
 .venv
 
-# Pipeline data outputs
+# Pipeline data (raw downloads + processed outputs; reproducible via pipelines)
 data/
-
-# Raw downloaded data (reproducible via pipelines)
-raw_data/
 
 # Local Claude Code settings
 .claude/settings.local.json
