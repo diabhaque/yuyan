@@ -1,0 +1,44 @@
+{
+  "id": "pd_price-lrcx_e450",
+  "type": "processed_data",
+  "description": "LRCX daily adjusted-close price series (USD); per-stock slice of the prices blob.",
+  "tags": [
+    "prices",
+    "equity",
+    "lrcx",
+    "usd",
+    "processed"
+  ],
+  "ts_recorded": "2026-06-12T18:00:00Z",
+  "ts_applies": "1984-05-04/2026-06-05",
+  "confidence": 0.9,
+  "source": "pipeline:pipelines/prices/prices.py",
+  "body": {
+    "blob_path": "data/blobs/prices.csv",
+    "format": "csv",
+    "ticker": "LRCX",
+    "currency": "USD",
+    "columns": [
+      "TS",
+      "primary_id",
+      "value",
+      "currency",
+      "TS_RECORDED"
+    ],
+    "row_count": 10604,
+    "date_range": [
+      "1984-05-04",
+      "2026-06-05"
+    ],
+    "units": {
+      "value": "USD per share, adjusted close"
+    },
+    "how_to_read": "Filter primary_id == 'LRCX' in data/blobs/prices.csv; 'value' is the adjusted close in USD, one row per trading day (TS)."
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Per-stock slice of the prices pipeline output (prices.csv); 10604 daily rows 1984-05-04..2026-06-05. Mechanically templated over the blob's distinct tickers (one card per stock). Confidence 0.9 (realized market prices).",
+    "inputs": [],
+    "code": "pipelines/prices/prices.py"
+  }
+}

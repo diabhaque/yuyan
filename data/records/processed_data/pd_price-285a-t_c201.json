@@ -1,0 +1,44 @@
+{
+  "id": "pd_price-285a-t_c201",
+  "type": "processed_data",
+  "description": "285A.T daily adjusted-close price series (JPY); per-stock slice of the prices blob.",
+  "tags": [
+    "prices",
+    "equity",
+    "285a.t",
+    "jpy",
+    "processed"
+  ],
+  "ts_recorded": "2026-06-12T18:00:00Z",
+  "ts_applies": "2024-12-18/2026-06-05",
+  "confidence": 0.9,
+  "source": "pipeline:pipelines/prices/prices.py",
+  "body": {
+    "blob_path": "data/blobs/prices.csv",
+    "format": "csv",
+    "ticker": "285A.T",
+    "currency": "JPY",
+    "columns": [
+      "TS",
+      "primary_id",
+      "value",
+      "currency",
+      "TS_RECORDED"
+    ],
+    "row_count": 354,
+    "date_range": [
+      "2024-12-18",
+      "2026-06-05"
+    ],
+    "units": {
+      "value": "JPY per share, adjusted close"
+    },
+    "how_to_read": "Filter primary_id == '285A.T' in data/blobs/prices.csv; 'value' is the adjusted close in JPY, one row per trading day (TS)."
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Per-stock slice of the prices pipeline output (prices.csv); 354 daily rows 2024-12-18..2026-06-05. Mechanically templated over the blob's distinct tickers (one card per stock). Confidence 0.9 (realized market prices).",
+    "inputs": [],
+    "code": "pipelines/prices/prices.py"
+  }
+}

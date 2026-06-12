@@ -1,0 +1,44 @@
+{
+  "id": "pd_price-intc_fc39",
+  "type": "processed_data",
+  "description": "INTC daily adjusted-close price series (USD); per-stock slice of the prices blob.",
+  "tags": [
+    "prices",
+    "equity",
+    "intc",
+    "usd",
+    "processed"
+  ],
+  "ts_recorded": "2026-06-12T18:00:00Z",
+  "ts_applies": "1980-03-17/2026-06-05",
+  "confidence": 0.9,
+  "source": "pipeline:pipelines/prices/prices.py",
+  "body": {
+    "blob_path": "data/blobs/prices.csv",
+    "format": "csv",
+    "ticker": "INTC",
+    "currency": "USD",
+    "columns": [
+      "TS",
+      "primary_id",
+      "value",
+      "currency",
+      "TS_RECORDED"
+    ],
+    "row_count": 11650,
+    "date_range": [
+      "1980-03-17",
+      "2026-06-05"
+    ],
+    "units": {
+      "value": "USD per share, adjusted close"
+    },
+    "how_to_read": "Filter primary_id == 'INTC' in data/blobs/prices.csv; 'value' is the adjusted close in USD, one row per trading day (TS)."
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Per-stock slice of the prices pipeline output (prices.csv); 11650 daily rows 1980-03-17..2026-06-05. Mechanically templated over the blob's distinct tickers (one card per stock). Confidence 0.9 (realized market prices).",
+    "inputs": [],
+    "code": "pipelines/prices/prices.py"
+  }
+}
