@@ -1,0 +1,23 @@
+{
+  "id": "rd_epoch-gh-lm-algo-progress_e3a4",
+  "type": "raw_data",
+  "description": "Epoch AI 'lm-algorithmic-progress' github repo — analysis of algorithmic progress in language models (no CSV data export; code/notebooks).",
+  "tags": ["epoch-ai", "github", "lm-algorithmic-progress", "raw", "pointer"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/lm-algorithmic-progress",
+  "body": {
+    "blob_path": null,
+    "format": "github repo (no CSV data files)",
+    "file_count": 0,
+    "how_to_read": "Pointer card: analysis code/notebooks repo, no CSV data copied (CSV-only policy). Clone https://github.com/epoch-research/lm-algorithmic-progress to retrieve. Algorithmic-efficiency trend context.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Pointer record for the epoch-research/lm-algorithmic-progress repo. No CSV data present at copy time (2026-06-12), so blob_path is null. Confidence 0.8 (CC BY 4.0 source).",
+    "inputs": [],
+    "code": null
+  }
+}

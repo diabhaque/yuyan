@@ -1,0 +1,26 @@
+{
+  "id": "rd_epoch-ml-hardware_a3c4",
+  "type": "raw_data",
+  "description": "Epoch AI 'Machine Learning Hardware' dataset — AI accelerators with performance (FLOP/s by precision), memory, bandwidth, TDP, price, process node.",
+  "tags": ["epoch-ai", "ml-hardware", "raw", "accelerators", "price-performance"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/machine-learning-hardware",
+  "body": {
+    "blob_path": "data/blobs/epoch/ml_hardware/ml_hardware.csv",
+    "format": "csv",
+    "file_count": 1,
+    "row_count": 176,
+    "columns": ["Hardware name", "Manufacturer", "Type", "Notes", "Release date", "Release price (USD)", "Tensor-FP16/BF16 performance (FLOP/s)", "FP8 performance (FLOP/s)", "FP4 performance (FLOP/s)", "Memory (bytes)", "Memory bandwidth (byte/s)", "Intranode bandwidth (byte/s)", "Internode bandwidth (bit/s)", "TDP (W)", "FP64 (double precision) performance (FLOP/s)", "FP32 (single precision) performance (FLOP/s)", "Foundry", "Die Size (mm^2)", "Process size (nm)", "Transistors (millions)", "Last modified", "Price-performance"],
+    "columns_note": "39 columns total; key ones listed. See CSV header for the full set of precision/clock variants.",
+    "how_to_read": "One row per accelerator (GPUs/TPUs/etc). 'Release price (USD)', 'TDP (W)', 'Memory (bytes)', and the FLOP/s columns support price-performance, power, and memory-content context for AI chips.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'Machine Learning Hardware' export, cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

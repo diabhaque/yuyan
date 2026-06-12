@@ -1,0 +1,23 @@
+{
+  "id": "rd_epoch-gh-mirrorcode_f5b6",
+  "type": "raw_data",
+  "description": "Epoch AI 'MirrorCode-data' github repo — MirrorCode benchmark data (no CSV data export; non-CSV formats).",
+  "tags": ["epoch-ai", "github", "mirrorcode-data", "raw", "pointer"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/MirrorCode-data",
+  "body": {
+    "blob_path": null,
+    "format": "github repo (no CSV data files)",
+    "file_count": 0,
+    "how_to_read": "Pointer card: MirrorCode data is in non-CSV formats, so no blob was copied (CSV-only policy). Clone https://github.com/epoch-research/MirrorCode-data to retrieve. Coding-benchmark context.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Pointer record for the epoch-research/MirrorCode-data repo. No CSV data present at copy time (2026-06-12), so blob_path is null. Confidence 0.8 (CC BY 4.0 source).",
+    "inputs": [],
+    "code": null
+  }
+}

@@ -8,21 +8,30 @@
   "confidence": 0.8,
   "source": "https://epoch.ai/data/ai-chip-components",
   "body": {
-    "blob_path": "data/blobs/epoch_ai_chip_components__quarterly_by_chip.csv",
-    "format": "csv",
+    "blob_path": "data/blobs/epoch/ai_chip_components/ai_chip_components__quarterly_by_chip.csv",
+    "format": "csv (6 files)",
     "row_count": 102,
+    "dataset_dir": "data/blobs/epoch/ai_chip_components/",
+    "files": [
+      {"name": "ai_chip_components__quarterly_by_chip.csv", "rows": 102, "columns": 33},
+      {"name": "ai_chip_components__quarterly_by_designer.csv", "rows": 43, "columns": 32},
+      {"name": "ai_chip_components__cumulative_by_chip.csv", "rows": 102, "columns": 24},
+      {"name": "ai_chip_components__cumulative_by_designer.csv", "rows": 43, "columns": 23},
+      {"name": "ai_chip_components__supply_denominators.csv", "rows": 8, "columns": 12},
+      {"name": "ai_chip_components__cumulative_supply_denominators.csv", "rows": 8, "columns": 12}
+    ],
     "columns": ["Name", "Quarter", "Designer", "Chip type", "Start date", "End date", "Logic wafers (5th percentile)", "Logic wafers (median)", "Logic wafers (95th percentile)", "Logic cost (USD) (5th percentile)", "Logic cost (USD) (median)", "Logic cost (USD) (95th percentile)", "Logic share (%) (5th percentile)", "Logic share (%) (median)", "Logic share (%) (95th percentile)", "CoWoS wafers (5th percentile)", "CoWoS wafers (median)", "CoWoS wafers (95th percentile)", "CoWoS cost (USD) (5th percentile)", "CoWoS cost (USD) (median)", "CoWoS cost (USD) (95th percentile)", "CoWoS share (%) (5th percentile)", "CoWoS share (%) (median)", "CoWoS share (%) (95th percentile)", "HBM cost (USD) (5th percentile)", "HBM cost (USD) (median)", "HBM cost (USD) (95th percentile)", "HBM share (%) (5th percentile)", "HBM share (%) (median)", "HBM share (%) (95th percentile)", "Auxiliary cost (USD) (5th percentile)", "Auxiliary cost (USD) (median)", "Auxiliary cost (USD) (95th percentile)"],
     "units": {
       "* cost (USD) (*)": "USD per chip",
       "* wafers (*)": "wafers",
       "* share (%) (*)": "percent of chip cost"
     },
-    "how_to_read": "Filter Designer in [NVIDIA, AMD, Google, Amazon]. Per-component median USD cost columns: 'HBM cost (USD) (median)' = Memory, 'Logic cost (USD) (median)' = Logic, 'CoWoS cost (USD) (median)' = Packaging, 'Auxiliary cost (USD) (median)' = Auxiliary. Sum each component across a designer's chips per Quarter, then divide by 1e9 for USD-billions. Q1 2026 is incomplete (missing NVIDIA) — exclude from history.",
+    "how_to_read": "`columns` lists the primary file (quarterly_by_chip). For chip-component spend: filter Designer in [NVIDIA, AMD, Google, Amazon]; per-component median USD cost columns: 'HBM cost (USD) (median)' = Memory, 'Logic cost (USD) (median)' = Logic, 'CoWoS cost (USD) (median)' = Packaging, 'Auxiliary cost (USD) (median)' = Auxiliary. Sum each component across a designer's chips per Quarter, then /1e9 for USD-billions. Q1 2026 is incomplete (missing NVIDIA) — exclude from history. The other files in `files[]` give by-designer and cumulative views + supply denominators.",
     "license": "CC BY 4.0"
   },
   "adjacency": ["pd_chip-spend-history_7d52"],
   "methodology": {
-    "summary": "As-downloaded Epoch AI ai_chip_components export (per-chip quarterly cost medians), cleaned only by the epoch_ai ingest (column-name strip, all-null-column drop), copied verbatim into the blob store. Confidence 0.8 = reputable curated third-party dataset under CC BY 4.0; default for migrated source data.",
+    "summary": "As-downloaded Epoch AI ai_chip_components export (per-chip quarterly cost medians), cleaned only by the epoch_ai ingest (column-name strip, all-null-column drop). Confidence 0.8 = reputable curated third-party dataset under CC BY 4.0; default for migrated source data. Enriched 2026-06-12: copied the full 6-file dataset to data/blobs/epoch/ai_chip_components/ (was just the quarterly_by_chip slice) and documented it in files[].",
     "inputs": [],
     "code": null
   }

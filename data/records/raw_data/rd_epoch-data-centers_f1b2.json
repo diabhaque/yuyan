@@ -1,0 +1,31 @@
+{
+  "id": "rd_epoch-data-centers_f1b2",
+  "type": "raw_data",
+  "description": "Epoch AI 'Frontier Data Centers' dataset — data center timelines plus cooling infrastructure (chillers, cooling towers).",
+  "tags": ["epoch-ai", "data-centers", "raw", "datacenter", "cooling"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/data-centers",
+  "body": {
+    "blob_path": "data/blobs/epoch/data_centers/",
+    "format": "csv (4 files)",
+    "file_count": 4,
+    "files": [
+      {"name": "data_centers__data_centers.csv", "rows": 56, "columns": 15},
+      {"name": "data_centers__data_center_timelines.csv", "rows": 316, "columns": 15},
+      {"name": "data_centers__data_center_chillers.csv", "rows": 143, "columns": 12},
+      {"name": "data_centers__data_center_cooling_towers.csv", "rows": 527, "columns": 17}
+    ],
+    "row_count": 56,
+    "columns": null,
+    "how_to_read": "data_centers is the entity table; timelines tracks build/expansion over time; chillers and cooling_towers are infrastructure detail. Read each CSV header for exact columns. Datacenter-scale demand/power context.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'Frontier Data Centers' export, cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

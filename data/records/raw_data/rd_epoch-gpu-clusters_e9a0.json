@@ -1,0 +1,26 @@
+{
+  "id": "rd_epoch-gpu-clusters_e9a0",
+  "type": "raw_data",
+  "description": "Epoch AI 'GPU Clusters' dataset — known AI compute clusters with chip counts, performance, power, cost, owner, location.",
+  "tags": ["epoch-ai", "gpu-clusters", "raw", "compute", "datacenter"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/gpu-clusters",
+  "body": {
+    "blob_path": "data/blobs/epoch/gpu_clusters/gpu_clusters.csv",
+    "format": "csv",
+    "file_count": 1,
+    "row_count": 482,
+    "columns": ["Name", "Status", "Certainty", "Single cluster?", "Max OP/s (log)", "H100 equivalents", "Chip type (primary)", "Chip quantity (primary)", "Country", "Owner", "First Operational Date", "Note", "Sector", "Power Capacity (MW)", "Hardware Cost", "Location", "Users", "Hardware note", "Quote", "Energy Efficiency (log)", "Chip type (secondary)", "Chip quantity (secondary)", "Total number of AI chips", "GPU Supplier (primary)", "Calculated Power Capacity (MW)", "Reported Power Capacity (MW)", "Calculated Cost", "Reported Cost", "Source 1"],
+    "columns_note": "51 columns total; key ones listed. See CSV header for the full set (percentile/secondary/source variants).",
+    "how_to_read": "One row per known AI cluster. Useful for datacenter-scale compute demand, power, and hardware-cost context. 'Hardware Cost' / 'Calculated Cost' / 'Reported Cost' give cluster capex.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'GPU Clusters' export, cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "rd_epoch-polling_c7e8",
+  "type": "raw_data",
+  "description": "Epoch AI 'Polling on AI Usage' dataset (Mar 2026) — survey responses on AI usage broken down by demographic.",
+  "tags": ["epoch-ai", "polling", "raw", "ai-usage", "survey"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": "2026-03",
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/polling",
+  "body": {
+    "blob_path": "data/blobs/epoch/polling/polling_on_ai_usage_mar_2026.csv",
+    "format": "csv",
+    "file_count": 1,
+    "row_count": 59,
+    "columns": ["Question", "Response", "Overall", "Age: 18–29", "Age: 30–44", "Age: 45–59", "Age: 60+", "Income: Under $25K", "Income: $25K–$50K", "Income: $50K–$75K", "Income: $75K–$100K", "Income: $100K+", "Education: Less than HS", "Education: High school", "Education: Some college", "Education: Bachelor+", "Employment: Full-time", "Employment: Part-time", "Employment: Not working"],
+    "how_to_read": "Long format: one row per (Question, Response); columns are the share giving that response, Overall plus by age/income/education/employment. Demand-side sentiment context, not chip data.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'Polling on AI Usage' (Mar 2026) export, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

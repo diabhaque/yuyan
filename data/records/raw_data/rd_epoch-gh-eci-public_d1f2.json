@@ -1,0 +1,23 @@
+{
+  "id": "rd_epoch-gh-eci-public_d1f2",
+  "type": "raw_data",
+  "description": "Epoch AI 'eci-public' github repo — Epoch Capabilities Index materials (no CSV data export; code/notebooks).",
+  "tags": ["epoch-ai", "github", "eci-public", "raw", "pointer", "capabilities"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/eci-public",
+  "body": {
+    "blob_path": null,
+    "format": "github repo (no CSV data files)",
+    "file_count": 0,
+    "how_to_read": "Pointer card: ECI methodology/code repo, no CSV data copied (CSV-only policy). The ECI scores themselves are in the benchmarks dataset (rd_epoch-benchmarks_b5d6, benchmarks__epoch_capabilities_index.csv). Clone https://github.com/epoch-research/eci-public to retrieve.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Pointer record for the epoch-research/eci-public repo. No CSV data present at copy time (2026-06-12), so blob_path is null. Confidence 0.8 (CC BY 4.0 source).",
+    "inputs": [],
+    "code": null
+  }
+}

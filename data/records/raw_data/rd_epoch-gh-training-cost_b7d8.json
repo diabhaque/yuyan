@@ -1,0 +1,33 @@
+{
+  "id": "rd_epoch-gh-training-cost_b7d8",
+  "type": "raw_data",
+  "description": "Epoch AI 'training-cost-trends' github repo data — ML systems full view, chip dataset, hardware prices, and model cost estimates.",
+  "tags": ["epoch-ai", "github", "training-cost-trends", "raw", "cost", "hardware-prices"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/training-cost-trends",
+  "body": {
+    "blob_path": "data/blobs/epoch/training_cost_trends/",
+    "format": "csv (6 files)",
+    "file_count": 6,
+    "files": [
+      {"name": "All ML Systems - full view.csv", "rows": 1892, "columns": 57},
+      {"name": "Chip dataset-Grid view.csv", "rows": 5775, "columns": 53},
+      {"name": "Hardware prices.csv", "rows": 591, "columns": 13},
+      {"name": "PCU518210518210.csv", "rows": 296, "columns": 2},
+      {"name": "model_costs.csv", "rows": 82, "columns": 4},
+      {"name": "model_costs_updated.csv", "rows": 61, "columns": 2}
+    ],
+    "row_count": 5775,
+    "columns": null,
+    "how_to_read": "Inputs behind Epoch's training-cost-trends analysis: a chip dataset (5775 rows), a hardware-price time series, a producer-price index (PCU), and model cost estimates. 'Hardware prices.csv' is useful for accelerator price trends. Read each CSV header for columns.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Data CSVs from the epoch-research/training-cost-trends repo, copied to blobs on 2026-06-12 (CSV-only). Confidence 0.8 (CC BY 4.0).",
+    "inputs": [],
+    "code": null
+  }
+}

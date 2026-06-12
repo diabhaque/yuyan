@@ -1,0 +1,30 @@
+{
+  "id": "rd_epoch-ai-chip-owners_d7f8",
+  "type": "raw_data",
+  "description": "Epoch AI 'AI Chip Owners' dataset — installed AI chips by owner and chip type over quarters.",
+  "tags": ["epoch-ai", "ai-chip-owners", "raw", "chips", "ownership"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/ai-chip-owners",
+  "body": {
+    "blob_path": "data/blobs/epoch/ai_chip_owners/",
+    "format": "csv (3 files)",
+    "file_count": 3,
+    "files": [
+      {"name": "ai_chip_owners__cumulative_by_chip_type.csv", "rows": 515, "columns": 20},
+      {"name": "ai_chip_owners__cumulative_by_designer.csv", "rows": 215, "columns": 16},
+      {"name": "ai_chip_owners__quarters_by_chip_type.csv", "rows": 384, "columns": 18}
+    ],
+    "row_count": 515,
+    "columns": null,
+    "how_to_read": "Cumulative and per-quarter installed-chip counts/compute by owner, split by chip type and by designer. Read each CSV header for exact columns. Relevant to demand-side chip deployment.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'AI Chip Owners' export, cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

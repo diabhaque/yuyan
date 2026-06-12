@@ -1,0 +1,29 @@
+{
+  "id": "rd_epoch-gh-robotic-manip_a5c6",
+  "type": "raw_data",
+  "description": "Epoch AI 'robotic-manipulation-compute' github repo data — ML models full view plus a robotics-models table.",
+  "tags": ["epoch-ai", "github", "robotic-manipulation-compute", "raw", "robotics", "compute"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/robotic-manipulation-compute",
+  "body": {
+    "blob_path": "data/blobs/epoch/robotic_manipulation_compute/",
+    "format": "csv (2 files)",
+    "file_count": 2,
+    "files": [
+      {"name": "ML Models-full view.csv", "rows": 3107, "columns": 112},
+      {"name": "Robotics Models.csv", "rows": 35, "columns": 25}
+    ],
+    "row_count": 3107,
+    "columns": null,
+    "how_to_read": "Full ML-models table (112 cols) and a focused robotics-models table with compute estimates. Read each CSV header for columns. Robotics-compute trend context.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Data CSVs from the epoch-research/robotic-manipulation-compute repo, copied to blobs on 2026-06-12 (CSV-only). Confidence 0.8 (CC BY 4.0).",
+    "inputs": [],
+    "code": null
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "rd_epoch-ai-chip-sales_c5e6",
+  "type": "raw_data",
+  "description": "Epoch AI 'AI Chip Sales' dataset — AI chip sales/shipment timelines by chip type and designer.",
+  "tags": ["epoch-ai", "ai-chip-sales", "raw", "chips", "shipments"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/ai-chip-sales",
+  "body": {
+    "blob_path": "data/blobs/epoch/ai_chip_sales/",
+    "format": "csv (5 files)",
+    "file_count": 5,
+    "files": [
+      {"name": "ai_chip_sales__chip_types.csv", "rows": 30, "columns": 14},
+      {"name": "ai_chip_sales__cumulative_timelines.csv", "rows": 218, "columns": 19},
+      {"name": "ai_chip_sales__cumulative_timelines_by_designer.csv", "rows": 64, "columns": 15},
+      {"name": "ai_chip_sales__organizations.csv", "rows": 12, "columns": 4},
+      {"name": "ai_chip_sales__timelines_by_chip.csv", "rows": 146, "columns": 24}
+    ],
+    "row_count": 218,
+    "columns": null,
+    "how_to_read": "chip_types and organizations are reference tables; the timelines files are time series of cumulative chip sales overall, by designer, and by chip. Read each CSV header for exact columns. Relevant to chip-volume / designer-mix signals.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'AI Chip Sales' export, cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

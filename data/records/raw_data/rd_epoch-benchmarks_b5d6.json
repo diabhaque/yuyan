@@ -1,0 +1,35 @@
+{
+  "id": "rd_epoch-benchmarks_b5d6",
+  "type": "raw_data",
+  "description": "Epoch AI 'AI Capabilities' (benchmarks) dataset — model scores across 51 benchmarks plus the Epoch Capabilities Index.",
+  "tags": ["epoch-ai", "benchmarks", "raw", "capabilities", "eci"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/benchmarks",
+  "body": {
+    "blob_path": "data/blobs/epoch/benchmarks/",
+    "format": "csv (51 files)",
+    "file_count": 51,
+    "files_sample": [
+      {"name": "benchmarks__epoch_capabilities_index.csv", "rows": 654, "columns": 11},
+      {"name": "benchmarks__mmlu_external.csv", "rows": 249, "columns": 13},
+      {"name": "benchmarks__gpqa_diamond.csv", "rows": 169, "columns": 13},
+      {"name": "benchmarks__frontiermath.csv", "rows": 100, "columns": 12},
+      {"name": "benchmarks__swe_bench_verified.csv", "rows": 32, "columns": 13},
+      {"name": "benchmarks__terminalbench_external.csv", "rows": 203, "columns": 18},
+      {"name": "benchmarks__arc_agi_external.csv", "rows": 144, "columns": 12},
+      {"name": "benchmarks__hle_external.csv", "rows": 51, "columns": 11}
+    ],
+    "row_count": 654,
+    "columns": null,
+    "how_to_read": "One CSV per benchmark (51 total; sample in files_sample, full list = `ls data/blobs/epoch/benchmarks/`). Each holds model scores over time for that benchmark; epoch_capabilities_index.csv is the aggregate ECI. Columns vary per file — read the header. Capabilities trend context, not chip data.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'AI Capabilities' benchmark export (51 per-benchmark CSVs), cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

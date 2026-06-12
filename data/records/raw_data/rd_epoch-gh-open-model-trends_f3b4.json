@@ -1,0 +1,30 @@
+{
+  "id": "rd_epoch-gh-open-model-trends_f3b4",
+  "type": "raw_data",
+  "description": "Epoch AI 'open-model-trends' github repo data — ML systems full view plus benchmark/accessibility tables for open vs closed models.",
+  "tags": ["epoch-ai", "github", "open-model-trends", "raw", "models"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/open-model-trends",
+  "body": {
+    "blob_path": "data/blobs/epoch/open_model_trends/",
+    "format": "csv (3 files)",
+    "file_count": 3,
+    "files": [
+      {"name": "All ML Systems - full view.csv", "rows": 1755, "columns": 88},
+      {"name": "benchmarks_with_model_accessibility.csv", "rows": 132, "columns": 24},
+      {"name": "gsm1k_with_model_accessibility.csv", "rows": 71, "columns": 8}
+    ],
+    "row_count": 1755,
+    "columns": null,
+    "how_to_read": "Full-view ML-systems table (88 cols) plus benchmark tables tagged by model accessibility (open/closed). Read each CSV header for columns. Open-vs-closed model trend context.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Data CSVs from the epoch-research/open-model-trends repo, copied to blobs on 2026-06-12 (CSV-only). Confidence 0.8 (CC BY 4.0).",
+    "inputs": [],
+    "code": null
+  }
+}

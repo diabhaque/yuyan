@@ -1,0 +1,35 @@
+{
+  "id": "rd_epoch-gh-data-stock_d9f0",
+  "type": "raw_data",
+  "description": "Epoch AI 'data-stock' github repo data — stock-of-training-data projections and inputs (compute projection, dataset sizes, web/text corpora).",
+  "tags": ["epoch-ai", "github", "data-stock", "raw", "training-data"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/data-stock",
+  "body": {
+    "blob_path": "data/blobs/epoch/data_stock/",
+    "format": "csv (8 files)",
+    "file_count": 8,
+    "files": [
+      {"name": "compute_projection.csv", "rows": 799998, "columns": 3, "size_note": "~33 MB"},
+      {"name": "CC_top500.csv", "rows": 500, "columns": 6},
+      {"name": "top_websites_by_traffic.csv", "rows": 101, "columns": 7},
+      {"name": "google_pivot_words.csv", "rows": 105, "columns": 12},
+      {"name": "dataset_sizes.csv", "rows": 80, "columns": 5},
+      {"name": "reddit_open_web_text.csv", "rows": 205, "columns": 3},
+      {"name": "UN-population-projection-medium-variant.csv", "rows": 151, "columns": 3},
+      {"name": "share-of-individuals-using-the-internet.csv", "rows": 28, "columns": 2}
+    ],
+    "row_count": 799998,
+    "columns": null,
+    "how_to_read": "Repo data export for Epoch's training-data-stock work. compute_projection.csv is large (~33 MB, 800k rows). Read each CSV header for columns. Tangential to chip-component spend (kept for completeness). Duplicate `data__`-prefixed copies present in the repo were not copied.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Data CSVs from the epoch-research/data-stock repo, copied to blobs on 2026-06-12 (CSV-only; non-CSV repo files and exact-duplicate copies skipped). Confidence 0.8 (CC BY 4.0).",
+    "inputs": [],
+    "code": null
+  }
+}

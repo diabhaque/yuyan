@@ -1,0 +1,431 @@
+﻿Name,Publication date,Organization,Link,Notable for,Policy parameter count,Policy parameter count notes,Policy training compute (FLOP),Policy training compute notes,Action training compute (FLOP),Action training compute notes,AI-generated training data compute (FLOP),AI-generated training data compute notes,Data-generating model training compute (FLOP),Data-generating model training compute notes,Simulation training compute (FLOP),Simulation training compute notes,Created By,Training dataset size,Total dataset size (from Training dataset size),Robots,Capabilities,Include,Include notes,Subjective review
+LBM 1.0,2025-07-07,Toyota Research Institute,https://arxiv.org/abs/2507.05331,,,,,"""We train for 48k steps with a global batch size of 2560""",,,,,,,,,Ben Cottier,,,,,checked,,
+GR00T-N1.5,2025-06-11,NVIDIA,https://research.nvidia.com/labs/gear/gr00t-n1_5/,,2720000000,"HuggingFace states 2.72B parameters
+https://huggingface.co/nvidia/GR00T-N1.5-3B",5.82e+23,"GR00T-N1.5 is based on Eagle 2.5, presumably a 3b parameter version (since GR00T-N1.5 is referred to as ""GR00T-N1.5-3B""; however, the Eagle 2.5 paper doesn't mention a model of this size, only the 8b version). 
+Eagle 2.5 is itself based on Qwen2.5. Presumably this is Qwen2.5-VL-3B to match the 3B size model, which uses 4.0752e+23 FLOPs, per the PCD. There is a 1.5B parameter size Qwen2.5 model, but not a 1.5B paremeter size Qwen2.5-VL model that I could find, so I assume it is the 3b parameter version
+We don't have FLOP counts for Eagle 2.5-specific training in the PCD. However, in the GR00T-N1 description, we find that the ratio of Eagle2-specific flop to Qwen2 flop was (6.3e22)/(1e22). Assuming this ratio is constant would mean that Eagle2.5 would use 6.5e22 FLOPs
+
+Also, GR00T-N1.5 is trained for ""250K steps on 1K H100 GPUs with global batch size 16384""
+We can compare this to GR00T-N1, which was retrained for 200k steps on 1024 H100 GPUs with a batch size of 16,384, which the authors state takes approximately 50k GPU hours. Since they use the same GPU count and batch size, we can scale by the ratio of step sizes and parameter counts to estimate how many hours they trained N1.5 for. 
+GR00T-N1.5 training hours = (50k) * (250k/200k) * (2.72B/2.2B) = 77.3k
+GR00T-N1.5 FLOPs = 77.3k * (990e12 H100 FLOP/s)* (40% utilization) * 3600 = 1.1e23
+
+Therefore, total FLOPs would be (Qwen2.5-vl-3b: 4.07E+23) + (eagle 2.5: 6.46E+22) + 1.10E+23 = 5.82E+23
+",1.1e+23,"GR00T-N1.5 is trained for ""250K steps on 1K H100 GPUs with global batch size 16384""
+We can compare this to GR00T-N1, which was retrained for 200k steps on 1024 H100 GPUs with a batch size of 16,384, which the authors state takes approximately 50k GPU hours. Since they use the same GPU count and batch size, we can scale by the ratio of step sizes and parameter counts to estimate how many hours they trained N1.5 for. 
+GR00T-N1.5 training hours = (50k) * (250k/200k) * (2.72B/2.2B) = 77.3k
+GR00T-N1.5 FLOPs = 77.3k * (990e12 H100 FLOP/s)* (40% utilization) * 3600 = 1.1e23",,,,,,,James Sanders,,,,,checked,,
+V-JEPA 2-AC,2025-06-11,Meta AI,https://arxiv.org/abs/2506.09985,,1300000000,"encoder is 1B parameter, it has a 0.3B action network on top of it",2.32e+22,"It would have taken them 60 A100 years, but they state that they get 8.4x efficiency gains. So, this corresponds to 7.1 GPU years, which at 33% utilization is
+(60/8.4 years)*(365*24*60*60)*(0.33)*(312e12 FLOP/s) = 2.32e22
+The additional training compute seems negligible ",,,,,,,,,James Sanders,,,,,checked,,
+Cosmos-Predict1-7B-Video2World (fine-tuned on Droid),2025-06-11,Meta AI,https://arxiv.org/pdf/2506.09985,,7000000000,7B parameter model,1.4e+24,"Very rough estimate. The 8 Cosmos models were trained ""using a cluster of 10,000 NVIDIA H100 GPUs in a time span of
+three months"". 
+https://arxiv.org/pdf/2501.03575
+I assign the FLOPs from this cluster proportional to the parameter size of the model trained. There are a total of 76B parameters between the 8 models. Therefore, assuming 20% utilization (starting with 33% but then accounting for time between experiments), we get
+(10k H100s)*(90 days)*(24*60*60)*(979e12)*(0.2 utilization)*(7/76) = 1.4e24 FLOPs
+",,,,,,,,,James Sanders,,,,,checked,,
+π0.5 (pi0.5),2025-04-22,Physical Intelligence,https://arxiv.org/abs/2504.16054,,3300000000,"same dimensions as pi0, so 3B for the VLM backbone and 300M for the action network ",6.1e+22,"""The π0.5 model builds upon π0 and adopts the PaliGemma
+VLM [5] as the backbone for visual-language understanding""
+The action network is small (0.3B) comapred to the VLM it's based on (3B). Therefore, we assume that most of the FLOPs comes from the VLM. This is based on PaliGemma, which, according to the calculation for pi0, is 6.1e+22 FLOPs
+This is a very rough approximation due to the assumption above",,,,,,,,,James Sanders,,,,,checked,,
+Gemini Robotics,2025-03-25,Google DeepMind,https://arxiv.org/abs/2503.20020,,,,,"While they report some results using Gemini 2.0 Pro Experimental 02-05, Gemini 2.0 Flash seems to be the base model for the real-world robot evaluation results. The robot is operated by a derivative of Gemini Robotics-ER (see Figure 1), and they say:
+""We also introduce Gemini Robotics-ER, a version of Gemini 2.0 Flash that has enhanced embodied reasoning""
+""This set of experiments suggests that Gemini 2.0 Flash and its ER enhanced variant, Gemini Robotics-ER [...]""
+
+Gemini Robotics itself is:
+- Trained ""on a large and diverse dataset consisting of action-labeled robot data as well as other
+multimodal data.""
+- Made up of ""a VLA backbone hosted in the cloud (Gemini Robotics backbone) and a local action decoder running on the robot’s onboard
+computer (Gemini Robotics decoder).""
+- Distilled from Gemini Robotics-ER (""The Gemini Robotics backbone is formed by a distilled version of Gemini Robotics-ER"")
+- Trained on a dataset of ""thousands of hours of real-world
+expert robot demonstrations""
+
+However, we don't have a compute estimate for Gemini 2.0 Flash, and we don't have details on the distillation of Gemini Robotics-ER.",,,,,,,,,Ben Cottier,,,,,checked,,"Seems like the most general and skilled demos I've seen, without fine-tuning for specific tasks (and the lack of fine-tuning puts it above π0). The quantitative results back this up. Dexterity is limited by the two pincers, but it's good. It was even pretty good at an in-person demo I went to, operating in a new outdoor environment."
+GR00T-N1,2025-03-18,NVIDIA,https://arxiv.org/abs/2503.14734v2,,2200000000,"""We use the NVIDIA Eagle-2 VLM (Li et al., 2025) as
+the vision-language backbone. Specifically, our publicly released GR00T-N1-2B model has 2.2B parameters
+in total, with 1.34B in the VLM.""",1.4e+23,"GR00T-N1 is based on Eagle 2. 
+
+Training compute that went into Eagle 2: 
+We have information on Eagle 2 9B but not the smaller ~2B version used for GR00T-N1. 
+
+Eagle2-2B is based on Qwen2-1.5B. Qwen2-1.5B was trained  on 7T tokens (https://arxiv.org/html/2407.10671v4)
+Use C = 6ND = 6 * 1.5e9 * 7e12 = 6.3e+22 FLOP
+This is likely most of the training compute for Eagle2-2B prior to the Eagle 2-specific training process, since the SigLIP component is only 400M parameters and the MLP connector is 9.4M parameters.
+
+Eagle2-9B (*not* 2B) used an estimated 4.7156e+22 FLOP, per the PCD database. Assuming dataset size is held constant (based on Table 4), Eagle-2-2B then used roughly 1e22 FLOP.
+
+6.3e22 + 1e22 = 7.3e22 FLOP for Eagle2-2B.
+
+Additional training compute for GR00T-N1 itself:
+“We use up to 1024 GPUs for a single model. GR00T-N1-2B used roughly 50,000 H100 GPU hours for pretraining.”
+Assume bf16 because it's mentioned for inference (this isn't certain), 40% utilization.
+50000 * 990e12 * 0.4 * 3600 = 7.128e+22 FLOP
+
+Fine-tuning compute on top of that seems relatively small: ""Compute-constrained finetuning was tested in the context of a single A6000 GPU. If only tuning the adapter
+layers (action and state encoders + action decoder) and DiT, a batch size up to 200 can be used. When tuning
+the vision encoder, a batch size of up to 16 can be used.""
+
+So now we can add Eagle2-2B compute to the additional compute for GR00T-N1-2B:
+7.3e22 + 7.1e22 = 1.4e23 FLOP.",7.128e+22,"“We use up to 1024 GPUs for a single model. GR00T-N1-2B used roughly 50,000 H100 GPU hours for pretraining.”
+Assume bf16 because it's mentioned for inference (this isn't certain), 40% utilization.
+50000 * 990e12 * 0.4 * 3600 = 7.128e+22 FLOP
+
+Fine-tuning compute on top of that seems relatively small: ""Compute-constrained finetuning was tested in the context of a single A6000 GPU. If only tuning the adapter
+layers (action and state encoders + action decoder) and DiT, a batch size up to 200 can be used. When tuning
+the vision encoder, a batch size of up to 16 can be used.""",2.7e+22,"AI-generated data “...required approximately 105k L40 GPU hours (∼1.5 days) on 3,600 L40 GPUs.”
+— Page 10, Neural Trajectories
+For the GR00T-N1 model itself, they say “the inference time for sampling a chunk of 16 actions is 63.9ms on an L40 GPU using bf16.” So assume bf16.
+Using https://epoch.ai/blog/estimating-training-compute:
+""Our model was trained on a NVIDIA L40 for 1.1e5 hours, and in total used 2.7e22 FLOP during training. The hardware was utilized at 40% of its peak performance.""
+Uncertain what the utilization should be for this kind of inference operation.",,"To generate data, ""we fine-tune image-to-video generation models (Agarwal et al., 2025; Wan Team, 2025; Yang et al., 2024)""
+Need to look at each of the models referenced and add up their compute.",,,Ben Cottier,GR00T-N1,,,,checked,,"Much better than Diffusion Policy in real-world evaluation. But DP was more impressive as a novel method than as an impressive demo in absolute terms. In terms of task complexity seems mostly pick and place, rigid objects, clean environment. Less impressive than π0 in that sense. But also it's a humanoid which seems harder. Overall quite uncertain but I'd put it below π0 and above OpenVLA."
+Helix,2025-02-20,Figure AI,https://www.figure.ai/news/helix,,7080000000,"""Our system comprises two main components: S2, a VLM backbone, and S1, a latent-conditional visuomotor transformer. S2 is built on a 7B-parameter open-source, open-weight VLM pretrained on internet-scale data.""
+
+""built on"" implies there could be more than the original 7B parameters, but we'll assume it's still roughly 7B.
+
+""S1, an 80M parameter cross-attention encoder-decoder transformer, handles low-level control.""",8.82e+22,"It's very likely that most of the compute went into the pretrained VLM backbone, given its parameter count of 7B is much larger than the other 80M module, and it was ""pretrained on internet-scale data"".
+
+""S2 is built on a 7B-parameter open-source, open-weight VLM [...]""
+
+They don't specify which VLM this is, but we can narrow it down. Searching the Epoch AI Models database for:
+- <9B parameters, >5B parameters
+- Open weights
+- Domain: vision OR robotics OR multimodal
+- Published before Helix was announced (2025-02-20)
+Of the matching models, four have known training compute:
+- Eagle 2, 4.7156e+22 FLOP
+- Qwen2-VL-7B, 6.72e+22 FLOP
+- Ovis-7B, 1.7e+23 FLOP
+- OpenVLA, 1.1e+23 FLOP
+The geomean of these values is 8.77e22 FLOP, while the range is (4.7156e+22, 1.7e+23).
+
+Further training for robotics:
+""We train Helix with ~500 hours of high quality supervised data in total, a small fraction of the size of previously collected VLA datasets (<5%), and without any dependencies around multi-robot-embodiment collect or multiple stages of training.""
+OpenVLA (a similar size model) had one of the largest VLA datasets to date, 970k real-world robot demonstrations, and fine-tuning on this took an estimated ~1e22 FLOP. Fine-tuning on <5% of that would then be ~5e20 FLOP. This is a very rough estimate but makes it likely that robotics-specific training compute was small relative to pre-training.
+
+Final estimate: 8.77e+22 + 5e20 = 8.82e22 FLOP
+
+Confidence: Chinchilla-optimal scaling for 7B dense transformer would be about 10x less than this, while 10x more than this would be 150x more data than Chinchilla-optimal. We may have missed some open-source 7B VLMs that would qualify. Finally, the robotics-specific compute is very uncertain but likely to be small. So overall the confidence is ""Likely"".",,,,,,,,,Ben Cottier,,,,,checked,,"The grocery video is impressive even if it's very cherry picked and the network was fine-tuned for the task. The dexterity, robot collaboration, and unseen objects are the impressive parts. 
+
+A single network picking up many novel objects with a 35-DoF action space is impressive. 
+
+But without hard numbers on success rate or task completion, I can't just assume it's consistently good and generalizeable.
+
+Compared to π0 it seems narrower in the kind of tasks it can perform with a single set of weights."
+π0 (pi0),2024-10-31,Physical Intelligence,https://arxiv.org/abs/2410.24164,"A generalist robot policy that enables zero-shot and fine-tuned execution of highly dexterous, multi-stage tasks—such as folding laundry, packing groceries, and assembling boxes—across diverse robot embodiments.",3300000000,"""we use
+PaliGemma [5] as our base model. PaliGemma is an open source 3 billion parameter VLM that offers a convenient tradeoff between size and performance. We add 300M parameters
+for the action expert (which is initialized from scratch) for a
+total of 3.3 billion parameters""",6.1e+22,"Assume that most of the training compute was from PaliGemma, because the action expert is relatively small (300M vs. 3B).
+
+PaliGemma is based on Gemma 2B and SigLIP.
+Gemma 2B: 4.5115822e+22 FLOP
+SigLIP: 4.9467301e+21 FLOP
+PaliGemma additional pre-training: 1.0652844e+22 FLOP
+Total: 6.09e22 FLOP",,"300M parameters
+~1B timesteps of trajectory data
+700k steps (presumably gradient steps)
+Batch size unknown
+Tokenization / sequence length unclear",,,,,,,Ben Cottier,π0 (pi0),,,π0 (pi0),checked,,"Crushes OpenVLA on their evaluation, tasks like folding laundry just seem more impressive than much else I've seen. These tasks are present in the training data but it can at least do the task without fine-tuning just for that task. Comparison to OpenVLA may be a bit unfair though if OpenVLA doesn't have those tasks in the training data. Performance on new tasks without fine-tuning (Fig. 13 bottom) is zero."
+RDT-1B,2024-10-10,Tsinghua University,https://arxiv.org/abs/2410.07864,largest diffusion-based robotic foundation model,1200000000,"Model Training and Inference: ""We scale the size of RDT up to 1.2B parameters, establishing it as the currently largest diffusion-based robotic foundation model.""",4.06e+22,"Model Training and Inference: ""The model is pre-trained on 48 H100 80GB GPUs for a month, giving a total of 1M training iteration steps. It takes three days to fine-tune this model using the same GPUs for 130K steps.""
+Table 10: ""Mixed Precision, bf16""
+Assume 48xGPU, ""scheduling reasons""  -> NVIDIA H100 SXM5 -> 9.894e14 FLOP/s/GPU
+Assume 0.3 utilization
+Assume 1 month + 3 days = 33 days
+0.3 * 48 GPU * (33 days) * 9.894e14 FLOP/s/GPU ~=  4.02e22 FLOP
+
+",,,,,,,,,James Sanders,RDT-1B,,,,checked,,"Crushes OpenVLA and Octo though this might not be fair due to choice of evaluation tasks.   Can learn fairly different tasks (hand over object, fold shorts) with just a few shots, that's impressive. Does same task on unseen objects and environments which look pretty realistic though clean and bright, at modest success rate (50-90%)."
+ALOHA Unleashed,2024-09-08,Google DeepMind,https://arxiv.org/abs/2410.13126v1,,217000000,"""In total, the Base model consists of 217M learnable parameters.""",3.6084096e+21,"Trained for 265 hours on 64 TPUv53 chips
+
+265 hours *3600 sec / hour *64 GPUs *197000000000000 FLOP / s *0.3 [assumed utilization] = 3.6084096e+21 FLOP",,,,,,,,,James Sanders,,,,,checked,,"Models are trained per-task, but tasks are impressive, dexterity is shown. Generalizes to unseen shirts, robot, building. Pretty uncertain how to compare this to more generalist policies. It's depth vs. breadth."
+OpenVLA,2024-06-13,"Stanford University,University of California (UC) Berkeley,Toyota Research Institute,Massachusetts Institute of Technology (MIT),Physical Intelligence,Google DeepMind",https://arxiv.org/abs/2406.09246,First open-source VLA that achieves state-of-the-art performance,7188100000,"Based on a Prismatic-7B VLM backbone, which itself is comprised of 600M parameter vision encoder (DinoV2 + SigLIP) plus Llama-2 7B. Table 1 indicates 7.1881 billion trainable parameters",1.1e+23,"Majority of compute is from VLA pre-training embedded in Prismatic-7B and it's constituent models. 
+
+The fine-tuning compute used in this paper is ""64 A100 GPUs for 14 days, or a total of 21,500 A100-hours""
+21500 * 3600 * 3.12e14 * 0.4 = 9.66e21
+
+Prismatic-7B training took ""less than 9 hours"" on 8 A100s: 9 * 3600 * 8 * 3.12e14 * 0.4 = 3.23e19
+
+Add in the pre-trained components:
+- DinoV2 = 7.42e21, per our database
+- The SigLIP model in question is SoViT-400m/14 from the cited Alabdulmohsin et al., 2023) and ""is pretrained on 40 billion examples, which amounts to 9T GFLOPs and 230K TPUv3 core-hours"" = 9e21
+- Llama 2-7B = 8.4e22, per our database
+
+Total
+9.66e21 + 3.23e19 + 7.42e21 + 9e21 + 8.4e22 = 1.10e23",,,,,,,,,James Sanders,OpenVLA,,,,checked,,Outperforms RT-2-X
+Octo-Base,2024-05-20,"University of California (UC) Berkeley,Stanford University,Carnegie Mellon University (CMU),Google DeepMind",https://arxiv.org/abs/2405.12213 ,,93000000,Octo-Base (93M param,584999999999999930000.0,"""We trained two variants of our model: Octo-Small with a
+transformer backbone that mirrors the size of a ViT-S, and
+Octo-Base with a transformer backbone that mirrors the size
+of a ViT-B [22].""
+
+""The ViT-B was trained for 300k steps with a batch size of 2048 using a TPU v4-128 pod, which took 14 hours""
+
+128 chips * 275e12 FLOP/s per chip * 0.33 utilization rate (assumed) * 14 hours * 3600 s/hour ~= 5.85e20 FLOP
+
+It doesn't seem to build on a pretrained base model. The Related Work section distinguishes Octo from that approach: ""Multiple works leverage diverse non-robot data or pretrained vision-language foundation models to boost policy generalization to new scenes and tasks [86, 103, 96, 16, 38, 11, 84, 36, 4, 37, 7, 3, 46, 15, 23]. More closely related to Octo are [...]""",584999999999999930000.0,,,,,,,,James Sanders,Octo-Base,,,,checked,,"Outperforms RT-1-X overall, worse than RT-2-X https://arxiv.org/pdf/2406.09246"
+RFM-1,2024-03-11,Covariant,https://covariant.ai/insights/introducing-rfm-1-giving-robots-human-like-reasoning-capabilities/,,8000000000,"""RFM-1 is an 8 billion parameter transformer""",,"The chart in this article shows up to about 5B tokens for training: https://covariant.ai/insights/rfm-1-update-higher-quality-grasp-accuracy/
+
+Assuming RFM-1 still refers to the architecture with 8B parameters (as per the announcement article), and the architecture is dense, this would amount to 2.4e20 FLOP. 
+
+It's not clear if this is the most compute-intensive version of RFM-1 to date, or a smaller-scale research experiment. Leaving the field empty until there's more information.",,,,,,,,,Ben Cottier,,,,,checked,,
+UniPi,2023-11-20,"Massachusetts Institute of Technology (MIT),University of California (UC) Berkeley,Google DeepMind,Georgia Institute of Technology,University of Alberta",https://arxiv.org/abs/2302.00111,,,,,"""We train each of our video diffusion models for 2M steps using batch size 2048""
+""We use 256 TPU-v4 chips for our first-frame conditioned generation model and temporal super resolution model.""
+Doesn't say training time.",,,,,,,,,Ben Cottier,,,,,checked,,
+RT-2-X,2023-10-13,"Allen Institute for AI,Arizona State University,California Institute of Technology,Carnegie Mellon University (CMU),Columbia University,Ecole Polytechnique F´ed´erale de Lausanne (EPFL),ETH Zurich,Georgia Institute of Technology,Google DeepMind,Google Research,Imperial College London,Korea Advanced Institute of Science and Technology (KAIST),Max Planck Institute for Intelligent Systems,Meta AI,Microsoft Research,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),NVIDIA,New York University (NYU),Princeton University,RIKEN,Shanghai Jiao Tong University,Stanford University,TU Darmstadt,University of Texas at Austin,The University of Tokyo,Toyota Research Institute,Tsinghua University,University of California (UC) Berkeley,UC Davis,University of California San Diego,University of Edinburgh,University of Freiburg,University of Illinois Urbana-Champaign (UIUC),University of Michigan,University of Montreal / Université de Montréal,University of Pennsylvania,University of Southern California,University of Washington",https://arxiv.org/abs/2310.08864v9,assembles open source dataset repository with over a million robot trajectories from many different robot embodiments; shows it can train a good model,55000000000,Size: 55B,5.9800000000000004e+23,"Trained similar to RT-2
+Pretrained on WebLi
+Co-fine-tuned on 50% original VLM data, 50% Open X robotics data mixture
+Doesn't say how long it was trained for
+
+The robotics dataset contains ""1M+ robot trajectories"". However, the OpenVLA paper claims 350k trajectories of training for RT-2-X, rather than 1M. These papers have multiple authors in common, so we'll assume this is right.
+""we curated a much larger training dataset for OpenVLA with 970k trajectories (vs. 350k for RT-2-X)"" (https://arxiv.org/pdf/2406.09246)
+350k trajectories is ~2.7x bigger than the 130k trajectories used for RT-1 (and ""similar dataset"" was used for RT-2, per the RT-2 paper).
+
+We estimated fine-tuning compute for RT-2 to be 1.4e22 (for the full VLM + robotics data mixture). Assuming the same number of epochs and same average trajectory data size as RT-2, RT-2-X would then use 1.4e22 * 2.7 ~= 3.8e22 FLOP for fine-tuning. 
+
+Total compute estimate: 5.6e23 pre-training for PaLI-X + 3.8e22 fine-tuning ~= 5.98e23 FLOP",1.9e+22,"As per Policy training compute notes, total fine-tuning compute was estimated at 3.8e22 FLOP, with 50% of that for robotics data. 3.8e22 / 2 = 1.9e22 FLOP.",,,,,,,James Sanders,RT-2-X,,,,checked,,"Table II: On par with RT-2 at generalization, plus much better across multiple embodiments"
+V-PTR,2023-09-22,"University of California (UC) Berkeley,Google DeepMind",https://arxiv.org/abs/2309.13041,"""combines the benefits of pre-training on video data with robotic offline RL approaches that train on diverse robot data, resulting in value functions and policies for manipulation tasks that perform better, act robustly, and generalize broadly""",27000000,"ResNet-50: 26M (https://arxiv.org/pdf/1905.11946)
+2-layer MLP ~= (2048 * 256 + 256 * 256) = 589824
+Total ~= 27M",6900000000000000000.0,"# Phases (based on Table 4):
+1. pre-training on multi-task robot data
+2. pre-training phase V-PTR fine-tunes the representation using multi-task CQL (Kumar et al., 2020) on diverse robot data
+3. fine-tuning phase aims to customize this policy for the target task
+
+The policy network is initialized from phase 1: ""V-PTR uses multi-task robot data to pre-train a Q-function and a policy using multi-task conservative Q-learning (CQL) (Kumar et al., 2023), initializing the parameters of both the Q-function and the policy using the backbone learned during video pre-training in Phase 1."" The policy also uses the backbone during training in phase 2 (""The RGB image is passed through a visual encoder""). So the policy training compute is basically the backbone + MLP training compute over all three phases.
+
+# Phase 1: video pretraining
+""We train the model for 2 × 10^6 gradient steps with a batch size of 64""
+But Table 4 reports batch size 256 for real-world ""pick place"" evaluation. We'll assume the number of steps is the same because they don't mention otherwise.
+Aside: the video dataset Ego4D consists of ""4M transitions"" suggesting number of epochs is either 2e6 * 256 / 4e6 = 128 or 2e6 * 64 / 4e6 = 32.
+
+Resnetv2-50 backbone. Assume this has similar FLOP to the original ResNet-50, at 4.1e9. FLOP for that is reported in https://arxiv.org/pdf/1905.11946 
+
+MLPs:
+""We define the visual backbone 𝑓𝜃(𝐬) to be a ResNet50-v2 model, which outputs a 2048-dimensional vector. The ICVF heads 𝜙, 𝜓, 𝑇 are 2-layer MLPs with hidden dimensions of 256 and a final dimension of 256.""
+Approx FLOP per forward pass: 2048 * 256 + 256*256 = 589824 FLOP. Small compared to ResNet so neglect this.
+
+Compute: 4.1e9 FLOP/image * 2e6 steps * 256 image/step * 3 forward-backward ratio = 6.2976e+18 FLOP
+
+# Phase 2: multi-task CQL
+""We train multi-task CQL for 2 × 10^5 gradient steps with batch size of 64""
+But again, table 4 indicates batch size of 256 for real world.
+4.1e9 * 2e5 * 256 * 3 = 6.2976e+17 FLOP
+
+# Fine-tuning
+
+""For each target task, we collect 10 demonstrations using teleoperation""
+
+This is probably negligible compute. E.g. if each demonstration is 60s at 60 FPS then there's 10 * 60 * 60 = 3.6e4 transitions, compared to 4e6 for the pretraining dataset.
+
+# Total
+
+6.2976e+18 + 6.2976e+17 ~= 6.9e18 FLOP
+
+Confidence: within 10x",,,,,,,,,Ben Cottier,,,,,checked,,"Fine-tunes on tasks but tests novel objects, novel kitchen workspace, novel distractors. Doesn't do very well with those though (<50% success rate)."
+RT-2,2023-07-23,Google DeepMind,https://arxiv.org/abs/2307.15818v1,"largest model yet used for direct closed-loop robotic control, SOTA on some tasks, introduced VLAs (?)",55000000000,"The largest model we evaluated, the 55B parameter RT-2-PaLI-X-55B model,",5.7000000000000006e+23,"Pre training: 
+- pre-trained model is PaLI-X-55B (5.6e23 FLOP, from PCD record)
+- base VLM was mainly trained on WebLI dataset of image-text pairs (1B in the dataset, unclear how many were used)
+
+Fine Tuning: 
+- co fine tuned on a combination of original web data (50%) + robot demonstration data (50%)
+-""For RT-2-PaLI-X-55B, we use learning rate 1e-3 and batch size 2048 and co-fine-tune the model for 80K gradient steps""
+- Need sequence length
+- ""We instantiate VLA models by building on the protocol proposed for RT-1 (Brohan et al., 2022), using a similar dataset, but expanding the model to use a large vision-language backbone."" RT-1 used a dataset of 130k trajectories.
+
+""In order to use these discretized actions to finetune a vision-language into a vision-language-action model, we need to associate tokens from the model’s existing tokenization with the discrete action bins. This requires reserving 256 tokens to serve as action tokens.""
+The action vector is 8 dimensions, and each dimension is associated with a token (embedding) for the numbers 1 to 256: ""For PaLI-X, integers up to 1000 each have a unique token, so we simply associate the action bins to the token representing the corresponding integer.""
+
+PaLI-X used 16x16 = 256 image patches (visual tokens) per image/input. (https://arxiv.org/pdf/2305.18565, §4.2)
+Assume that's kept the same. Sounds like one image per input in the RT-2 paper as well: ""our inputs include robot camera image and textual task description (using standard VQA format “Q: what action should the robot take to [task instruction]? A:”)""
+Example instructions in Appendix F are pretty short, e.g. ""move coke can to the man with white hair"". About 10 words or 13 tokens assuming 3:4 ratio, relatively small.
+
+For the full end-to-end with ViT, fine-tuning compute would be:
+6ND = 6 * 55e9 params * 2048 batch size * 80000 iterations * 256 tokens/batch ~= 1.4e+22
+This is quite small.
+
+Total compute estimate: 5.6e23 + 1.4e+22 = 5.7e23 FLOP.",,,,,,,,,James Sanders,RT-2,,,,checked,,Clearly better than RT-1
+RoboCat,2023-06-20,Google DeepMind,https://arxiv.org/pdf/2306.11706v2,,1180000000,1.18B parameter decoder-only transformer,3.71e+21,"Main training:
+- 2M steps
+- 256 batch size
+- 1024 sequence length
+- 6ND estimate gives 3.7e21
+
+Fine tuning
+- <=50k steps
+- 32 batch size
+- 1024 seq length
+- 6ND estimate gives 
+- done 13 times (13 different tasks)
+- ultimatley seems negligible compared to main training
+
+VQ-GAN pretraining seems negligible compared to main training",,,,,,,,,James Sanders,RoboCat,,,,checked,,"Very simple environment, simple rigid objects, moreso than RT-1. But shows cross-embodiment which is a step above RT-1. Also the generality is more impressive  than SayCan"
+Diffusion Policy,2023-03-07,"Columbia University,Massachusetts Institute of Technology (MIT),Toyota Research Institute",https://arxiv.org/abs/2303.04137,Implements a new way of generating robot behavior by representing a robot's visuomotor policy as a conditional denoising diffusion process,89000000,"See Table 7. The CNN-based diffusion policy seems to be used in more of the real-world evaluations than the Transformer. Elsewhere they say ""In general, we recommend starting with the CNN-based diffusion policy implementation as the first attempt at a new task."" For Real evaluations, the sum of diffusion and vision parameters in Table 7 is 67 + 22 = 89M.",,"For image-based method (probably used more compute than low-dim state-based method)
+Batch size: 64
+Epochs: 3000
+Training steps: 512,400 (based on log https://diffusion-policy.cs.columbia.edu/data/experiments/image/pusht/diffusion_policy_cnn/train_2/logs.json.txt)
+
+So total observations in training = 512400 * 64 = 32,793,600
+
+""In our real-world experiments, using DDIM with
+100 training iterations and 10 inference iterations enables 0.1s
+inference latency on an Nvidia 3080 GPU.""
+This suggests the 100 training iterations take 1s.
+Sanity check: 1s per input observation * 32,793,600 observations = 32,793,600s ~= 380 days. Over 8 GPUs this could be reduced to 47 days of wall-clock time (Config files e.g. https://diffusion-policy.cs.columbia.edu/data/experiments/image/pusht/diffusion_policy_cnn/config.yaml specify 8 workers). This is possible but seems very unlikely in a paper with many experiments like this.
+
+29.77e12 FLOP/s for 3080 GPU * 40% utilization * 1s per input observation * 32,793,600 observations = 4.1e20 FLOP
+
+Not entering this number yet as it's not confident within 1.5 OOMs.",,,,,,,,,Ben Cottier,,,,,checked,,
+PaLM-E-12b,2023-03-06,"Google Research,Google,TU Berlin",https://arxiv.org/abs/2303.03378,,12000000000,"They train up to a 562b parameter model. However, they only show evidence in the paper of using the 12b parameter model for real world robotic manipulation experiments",1.4e+23,"This model is based on a 8b PaLM model (which took 4.29e22 FLOPs to train, as stated in the PaLM paper) and a 4b ViT-e model from https://arxiv.org/pdf/2209.06794
+For the ViT-e model, they indicate that they train it for 1M steps with 16,384 batch size on 224x224 px images, and Table 8 indicates that it is 1.98e12 FLOPs per forward pass for a 224x224 image. Therefore, FLOPs = (1M steps)*(16,384 batch size)*(1.98e12 FLOPs per forward pass)*(1 for forward pass + 2 for backward pass = 3) = 9.73e22
+The additional fine tuning compute they do seems negligible relative to this, so the total FLOPs is 4.29e22 +9.73e22 = 1.4e23
+",168334848000000000000.0,"""Given the observed image and a long-horizon goal, e.g. “sort the blocks by colors into corners”, PaLM-E outputs language subgoals at 1 Hz to the policies from Lynch et al. (2022), that output low-level robot actions at 5 Hz.""
+
+From Lynch et al. (2022):
+""We train our policies on a TPUv3 8x8 pod (64 TPUv3 chips)
+for approximately 500,000 steps or until training loss plateaus.
+At roughly 7.6 steps/second, policies finish training in 18 hours.""
+64 * 123e12 FLOP/s * 0.33 * 18 * 3600s =
+1.68334848e+20",,,,,,,James Sanders,,,,,checked,,
+ROSIE,2023-02-22,"Google,Google Research",https://arxiv.org/pdf/2302.11550,,35000000,Same as RT-1,152064000000000000000.0,"""We train our policy on 16 TPUs for 1 day""
+It's unclear if this is just the fine-tuning, or pre-training RT-1 + fine-tuning. We'll assume it's everything.
+
+They don't mention which TPU, but it's likely to be v4 given the paper was published in Feb 2023, which is post-v4 and pre-v5.
+
+16 TPUv4 * 275e12 FLOP/s/TPUv4 * 0.4 utilization * 1 * 24 * 3600s = 1.52064e+20 FLOP
+
+Other evidence:
+""We take a pre-trained RT-1 policy with 35M parameters and trained for 315k steps at a learning rate of 1×10−4 and fine-tune the RT-1 policy with 1:1 mixing ratio of the original 130k episodes of RT-1 data and the ROSIE-generated episodes with for 85k steps with learning rate 1×10−6 . We follow all the other policy training hyperparameters used in [2]."" ([2] = RT-1 paper)
+Don't see enough info to estimate compute from this, though.",,,,,,,,,Ben Cottier,,,,,checked,,"Improves on RT-1, especially on novel objects and backgrounds. Not clearly better than RT-2"
+RT-1,2022-12-13,"Google,Google Research",https://arxiv.org/abs/2212.06817,first successful application of the foundation model paradigm to robotics,35000000,"""Despite its size (35M parameters)""",,"Tokenizer is EfficientNet-B3:
+""RT-1 tokenizes a history of 6 images by passing images through an ImageNet pretrained EfficientNet-B3 (Tan & Le, 2019) model, which takes 6 images of resolution 300×300 as input and outputs a spatial feature map of shape 9×9×512 from the final convolutional layer. Unlike Reed et al. (2022), we do not patchify the images into visual tokens prior to feeding them to our Transformer backbone. We instead flatten the output feature map from the EfficientNet into 81 visual tokens which are passed on to the later layers of the network.""
+
+""RT-1’s image and instruction tokenization via FiLM EfficientNet-B3 is a total of 16M parameters, with 26 layers of MBConv blocks and FiLM layers, which output 81 vision-language tokens.""
+
+""The inclusion of TokenLearner subsamples the 81 visual tokens that come out of the pre-trained FiLM-EfficientNet layers to just 8 final tokens that are then passed on to our Transformer layers.""
+
+""Transformer. These 8 tokens per-image are then concatenated with the other images in the history, forming 48 total tokens (with added position encoding) to be fed into the Transformer backbone of RT-1. The Transformer is a decoder-only sequence model with 8 self-attention layers and 19M total parameters that outputs action tokens."" I take this to mean that the total tokens in the training data would be 48 x #images, assuming the history of images rolls forward by one at a time.
+
+""Our primary dataset consists of ∼130k robot demonstrations"".
+
+There is an open-source version of the RT-1 training dataset which consists of 73,499 episodes. Based on the first 1000 episodes, there are about 44 obs per episode on average. So with 130,000 episodes, there are 5.72M obs total.
+
+Estimated compute per epoch for the transformer:
+6ND = 6 * 19e6 params * 5.72e6 examples * 48 tokens/example = 3.1e16 FLOP
+We don't know the number of epochs, though.",,,,,,,,,James Sanders,RT-1,,,,checked,,
+PerAct,2022-11-11,"University of Washington,NVIDIA",https://arxiv.org/abs/2209.05451,Shows the usefulness of voxel data: Transformer trained on voxelized 3D observation and action space outperforms unstructured image-to-action agents and 3D ConvNet,39254813,"Loaded the model checkpoint with 2048 latents in pytorch 
+https://github.com/peract/peract?tab=readme-ov-file#download
+The other available checkpoint is similar at 38M parameters.",8667648000000000000.0,"Simulation training compute (not counted here, but for reference):
+""The agent was trained with a batch-size of 16 on 8 NVIDIA V100 GPUs for 16 days (600K iterations).""
+8 * 120e12 * 0.3 * 16 * 24 * 3600 = 3.981312e+20 FLOP
+
+Real robot training compute:
+""We train a PERACT agent from scratch with 53 demonstrations. The training samples are augmented with ±0.125m translation perturbations and ±45◦ yaw rotation perturbations. We train on 8 NVIDIA P100 GPUs for 2 days.""
+
+Assume FP16 for 2022 publication https://epoch.ai/data-insights/training-precision
+8 * 19e12 FLOP/s * 0.33 utilization * 2 * 24 * 3600s ~= 8.667648e+18 FLOP",,,,,,,,,Ben Cottier,,,,,checked,,"Trains on the tasks, but sometimes handles scene changes. Environment and tasks are more realistic than Gato though this was more narrowly trained."
+Interactive Language,2022-10-12,Google,https://arxiv.org/pdf/2210.06407,,,,,,168334848000000000000.0,"""We train our policies on a TPUv3 8x8 pod (64 TPUv3 chips)
+for approximately 500,000 steps or until training loss plateaus.
+At roughly 7.6 steps/second, policies finish training in 18 hours.""
+64 * 123e12 FLOP/s * 0.33 * 18 * 3600s =
+1.68334848e+20",,,,,,,Ben Cottier,,,,,checked,,
+ProgPrompt,2022-09-22,"University of Southern California,NVIDIA",https://arxiv.org/abs/2209.11302,,,,,,,,,,,,,,Ben Cottier,,,,,checked,,
+LATTE,2022-09-16,"Microsoft,Technical University of Munich",https://arxiv.org/abs/2208.02918v3,,,,1.0785285e+22,"Pre-trained models - these models seem to be run at inference (Fig. 2), i.e. part of the policy parameters, so we'll include them in the policy training compute.
+- BERT encoder. Fig. 2 says ""Distilled"" but this isn't mentioned anywhere else. I'll assume it's BERT Large. 2.85e+20 FLOP
+- CLIP text + image encoders. Assume the largest ViT-based one, CLIP (ViT L/14@336px). 1.05e+22 FLOP
+
+Fine-tuning:
+""We use a Nvidia Tesla V100 GPU with batch size of 16, and
+train the model for 500 epochs in approximately 2 hours.""
+120e12 FLOP/s * 0.33 utilization * 2 * 3600s = 2.8512e+17 FLOP
+
+Total:
+2.85e20 + 1.05e22 + 2.85e17 = 1.0785285e+22",285000000000000000.0,"""We use a Nvidia Tesla V100 GPU with batch size of 16, and
+train the model for 500 epochs in approximately 2 hours.""
+120e12 FLOP/s * 0.33 utilization * 2 * 3600s = 2.8512e+17 FLOP",,,,,,,Ben Cottier,,,,,checked,,"Based on the video (https://www.youtube.com/watch?v=Kutc_peSrpw), doesn't seem to grip objects autonomously. Just moves them around. Demonstration is basic, focusing on the ability to modify a single short trajectory through natural language instructions."
+PaLM-SayCan,2022-08-16,Google,https://arxiv.org/abs/2204.01691v2,combines pretrained LLMs (Say) with learned robot value functions (Can) without end to end training,540000000000,"PaLM 540B is used. Even if the rest of the policy uses hundreds of millions of parameters (likely an overestimate based on the paper), this is negligible compared to 540B",2.5272e+24,"""The RL model is trained using 16 TPUv3 chips and for about 100 hours, as well as a pool of 3000 CPU workers to collect episodes and another 3000 CPU workers to compute target Q-values.""
+"" The BC model is trained using 16 TPUv3 chips and
+trained for about 27 hours.""
+16*(100+27) hours * 3600 * 123 teraflops * 0.4 (assumed utilization) = 3.6e20
+
+PaLM itself uses 2.5272e+24, so additional training is negligible.",296923968000000000000.0,"There is a value function and a policy - both are used to decide actions during inference, so we'll count the training compute for both.
+
+""The BC model is trained using 16 TPUv3 chips and trained for about 27 hours.""
+16 * 123e12 FLOP/s * 0.33 * 27 * 3600s = 6.3125568e+19 FLOP
+
+""The RL model is trained using 16 TPUv3 chips and for about 100 hours, as well as a pool of 3000 CPU workers to collect episodes and another 3000 CPU workers to compute target Q-values.""
+16 * 123e12 FLOP/s * 0.33 * 100 * 3600s = 2.337984e+20 FLOP
+
+Total: 2.96923968e+20 FLOP
+",,,,,,,James Sanders,PaLM-SayCan,,,,checked,,"Mapping natural language instructions to motion is cool, but it routes to fine-tuned policies so it's not general on the robot end"
+Inner Monologue PaLM,2022-07-12,Google,https://arxiv.org/abs/2207.05608v1,"LLM receives real-time environmental information and can replan accordingly, rather than just generating a fixed plan upfront",540000000000,"PaLM 540B is used. Even if the rest of the policy uses hundreds of millions of parameters (likely an overestimate based on the paper), this is negligible compared to 540B
+
+""We note that in our specific implementations of Inner
+Monologue, we use pre-trained LLMs for planning that are not finetuned""",2.5272e+24,"Trained in very similar way to PaLM-SayCan. As was the case there, all additional training is likely swamped by several orders of magnitude by the original training for PaLM (2.5e24)",296923968000000000000.0,"""We use an instantiation of Inner Monologue that uses (i) PALM [8] as the LLM for multi-step planning, (ii) value functions from pre-trained control policies for affordance grounding [21]"" where [21] = SayCan paper.
+
+For SayCan we calculated 2.97e20 FLOP for the value functions and policies.",,,,,,,James Sanders,Inner Monologue PaLM,,,,checked,,Seems to improve on SayCan
+Gato,2022-05-12,Google DeepMind,https://arxiv.org/abs/2205.06175,first time that a single neural network with the same weights could successfully perform hundreds of completely different tasks,1180000000,"Figure 10 compares
+the full 1.18B parameter Gato ",4.02e+21,"256 (16x16x) TPUv3 chips x 123e12 FLOPS/chip x 4 days x 86400 seconds/day * 0.4 utilization = 4.35e21 FLOPs
+
+Similar value by 6NC:
+6 * 524288000000 * 1.18B = 3.71e21
+
+Using geometric mean:
+sqrt(4.35e21 * 3.71e21) = 4.02e21",,,,Lots of data generated for training,,,,,James Sanders,Gato,524288000000,,,checked,,"Stacks novel objects of different shapes, though the environment and blocks look very simple and controlled"
+CLIPort,2021-09-24,"University of Washington,NVIDIA",https://arxiv.org/abs/2109.12098v1,,,Not clearly stated in the paper. Likelytens of millions,2910000000000000000.0,"""we train all multi-task models 3× longer for 600K iterations or 6
+GPU days.""
+The GPU mentioned elsewhere in this paper is a P100. They also mention elsewhere that they only use a single GPU
+6 days x (1 GPU) x (1.87E+13 FLOP/s) * 0.3 utilization = 2.91e18",2910000000000000000.0,,,,,,,,James Sanders,,,,,checked,,"Not clear that real-world evaluation includes unseen elements. But the dexterity is decent - folding cloths, picking cherries."
+Rubik's cube ADR robot,2019-10-15,OpenAI,https://arxiv.org/abs/1910.07113,,13863132,Table 13 on p.44,862000000000000000000.0,"""For the Rubik’s cube task, we use 8 × 8 = 64 NVIDIA V100 GPUs""
+""We’ve been training the Rubik’s Cube policy continuously for several months at this scale [...] The cumulative amount of experience over that period used for training on the Rubik’s cube is roughly 13 thousand years""
+
+""The best ADR policies used in this work were obtained using this approach. We trained them for multiple months while
+making multiple changes to the model architecture, training environment, and hyperparameters.""
+
+Policy network params: 13,863,132
+Value function network params: 13,638,657
+Architecture is a mix of MLP and LSTM.
+Inputs to the networks are just positions/orientations/angles, not images (Table 1)
+For both MLP and LSTM, FLOP is roughly 2*parameters (https://epoch.ai/blog/estimating-training-compute#example-cnn-lstm-fcn-model)
+
+""[...] 1600 timesteps, which corresponds to 128 seconds"" tells us that there's 12.5 timesteps computed per second.
+
+Total timesteps ~= 13e3 years * 365 * 24 * 60 * 60 s/year * 12.5 timesteps/s = 5.1246e12 timesteps
+
+Therefore:
+Training compute for policy network ~= (13.86e6 + 13.64e6) * 2 * 5.1246e12 * 3 ~= 8.46e20
+
+This implies quite a low utilization of the GPUs. Suppose ""several months"" means 90 days, and conservatively assume non-deep-learning performance for the V100:
+8.46e20 / (64 V100 * 14e12 FLOP/s * 90 days * 24 * 60 * 60) ~= 0.12.
+
+One way to reconcile this is that it wasn't literally continuous training for several months, as training was interleaved with changes in the method, and simulation time.
+
+There is also a vision network that does state estimation. This is part of the pipeline for computing each action, so we include it in the ""policy"" training compute.
+
+The vision network mostly consists of 3 ResNet50 backbones which are about 25M parameters; the rest of the architecture shown in Figure 14 looks negligible by comparison.
+
+ResNet50 uses 3.8e9 mult-adds per forward pass according to Table 1 in https://arxiv.org/pdf/1512.03385. 
+
+Table 16 of the cube paper says 300e3 batches with 768 images per batch. 
+
+So, vision network compute ~= 3 backbones * 3.8e9 mult-adds * 2 FLOP/mult-add * 300000 batches * 768 points/batch * 3 forward-backward ratio = 1.57594e+19 FLOP
+So in the end this seems almost negligible.
+
+Therefore, total policy compute ~= 8.46e20 + 1.58e19 = 8.62e20",846000000000000000000.0,,,,,,,,Ben Cottier,,,,,checked,,Impressive dexterity. It's a scale-up of DexNet but it's narrow in capability.
+Dex-Net 4.0,2019-01-30,University of California (UC) Berkeley,www.science.org/doi/10.1126/scirobotics.aau4984,,36000000,"18 million parameters for each CNN for Dexnet2. There are two of these (one for each arm)
+This gives 36 million parameters
+To decide actions, the CNN is used to select the best grasp. No other neural network parameters seem to be involved",,,,,,,,,,,Ben Cottier,,,,,checked,,
+Dexterous In-Hand Manipulation,2018-08-01,OpenAI,https://arxiv.org/pdf/1808.00177v5,,,,216000000000000000000.0,"In experiments, runs were typically conducted for 50 hours of wall time, with up to 32 GPUs. Table 10 specifies V100 GPUs for training the policy.
+Assume V100 base variant, BF16, 0.3 utilization
+V100 tensor FP16 performance = 1.25e14 FLOP/s
+
+32 GPUs * (0.3 * 1.25e14 FLOP/s/GPU) * (3600 s/1 hr) * 50 hr  = 2.16e+20 FLOP",,,,,,,,,Ben Cottier,,,,,checked,,"Like a more basic version of the Rubiks cube demo - less dexterity, and the objects are less complex."
+QT-Opt,2018-06-27,"Google Brain,University of California (UC) Berkeley",https://arxiv.org/abs/1806.10293,,1200000,"""The Q-function Qθ¯1(s, a) is represented in our system by a large
+convolutional neural network with 1.2M parameters""
+""QT-Opt dispenses with the need to train an explicit actor, instead
+using stochastic optimization over the critic to select actions and target values""
+The policy is computed via stochastic optimization of the Q-function, so the parameters involved in computing the policy are effectively those of the Q-function.",13950000000000000000.0,"The Q-function is a convnet
+
+""We found empirically that a large number of gradient steps (up to 15M) were needed to train an effective Q-function due to the complexity of the task and large size of the dataset and model.""
+
+""This system allows us to train the Q-function at 40 steps per second with a batch size of 32 across 10 NVIDIA P100 GPUs.""
+
+15e6 steps / (40 steps/second) = 375e3 seconds
+10 GPUs * 9.3e12 FLOP/s/GPU * 0.4 utilization * 375e3 s = 1.395e+19 FLOP",,,,,,,,,Ben Cottier,QT-Opt,,KUKA LBR IIWA,,checked,,"Grasping many unseen and diverse objects, automatically learning skills, can pick an object from a messy pile. Unsure how to compare this to DexNet"

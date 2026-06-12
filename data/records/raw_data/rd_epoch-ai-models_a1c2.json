@@ -1,0 +1,31 @@
+{
+  "id": "rd_epoch-ai-models_a1c2",
+  "type": "raw_data",
+  "description": "Epoch AI 'AI Models' dataset — notable/frontier/large-scale ML models with training compute, parameters, dataset size, organizations, release dates.",
+  "tags": ["epoch-ai", "ai-models", "raw", "compute", "models"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/ai-models",
+  "body": {
+    "blob_path": "data/blobs/epoch/ai_models/",
+    "format": "csv (4 files)",
+    "file_count": 4,
+    "files": [
+      {"name": "ai_models__all_ai_models.csv", "rows": 3537, "columns": 57},
+      {"name": "ai_models__notable_ai_models.csv", "rows": 1026, "columns": 47},
+      {"name": "ai_models__large_scale_ai_models.csv", "rows": 516, "columns": 34},
+      {"name": "ai_models__frontier_ai_models.csv", "rows": 137, "columns": 61}
+    ],
+    "row_count": 3537,
+    "columns": null,
+    "how_to_read": "Four filtered views of the same registry; all_ai_models is the superset. Key columns include model name, organization, domain, training-compute (FLOP), parameters, training-dataset size, and publication/release date. Columns vary per view — read the CSV header. Use for compute-trend / model-scaling context, not chip-component spend.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'AI Models' export, cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

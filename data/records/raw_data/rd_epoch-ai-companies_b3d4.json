@@ -1,0 +1,33 @@
+{
+  "id": "rd_epoch-ai-companies_b3d4",
+  "type": "raw_data",
+  "description": "Epoch AI 'AI Companies' dataset — companies with compute spend, funding rounds, revenue, staff, and usage reports.",
+  "tags": ["epoch-ai", "ai-companies", "raw", "compute-spend", "revenue", "funding"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://epoch.ai/data/ai-companies",
+  "body": {
+    "blob_path": "data/blobs/epoch/ai_companies/",
+    "format": "csv (6 files)",
+    "file_count": 6,
+    "files": [
+      {"name": "ai_companies__ai_companies.csv", "rows": 9, "columns": 10},
+      {"name": "ai_companies__ai_companies_compute_spend.csv", "rows": 13, "columns": 17},
+      {"name": "ai_companies__ai_companies_funding_rounds.csv", "rows": 46, "columns": 15},
+      {"name": "ai_companies__ai_companies_revenue_reports.csv", "rows": 52, "columns": 18},
+      {"name": "ai_companies__ai_companies_staff_reports.csv", "rows": 45, "columns": 13},
+      {"name": "ai_companies__ai_companies_usage_reports.csv", "rows": 49, "columns": 16}
+    ],
+    "row_count": 9,
+    "columns": null,
+    "how_to_read": "ai_companies is the entity table; the other files are long-format report tables (compute spend, funding rounds, revenue, staff, usage) joinable by company. Read each CSV header for exact columns. Useful for AI-demand / capex context.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "As-downloaded Epoch AI 'AI Companies' export, cleaned by the epoch_ai ingest, copied to blobs on 2026-06-12. Confidence 0.8 (curated CC BY 4.0 dataset).",
+    "inputs": [],
+    "code": null
+  }
+}

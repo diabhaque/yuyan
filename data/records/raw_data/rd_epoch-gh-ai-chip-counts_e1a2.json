@@ -1,0 +1,35 @@
+{
+  "id": "rd_epoch-gh-ai-chip-counts_e1a2",
+  "type": "raw_data",
+  "description": "Epoch AI 'ai-chip-counts' github repo data — chip-count timelines, cumulative totals, and owner breakdowns by designer (NVIDIA/AMD/TPU/Trainium and others).",
+  "tags": ["epoch-ai", "github", "ai-chip-counts", "raw", "chips", "designers"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/ai-chip-counts",
+  "body": {
+    "blob_path": "data/blobs/epoch/ai_chip_counts/",
+    "format": "csv (51 files)",
+    "file_count": 51,
+    "files_sample": [
+      {"name": "nvidia_cumulative_by_chip.csv", "rows": 78, "columns": 13},
+      {"name": "nvidia_owners_cumulative_by_chip.csv", "rows": 263, "columns": 18},
+      {"name": "amd_cumulative_by_chip.csv", "rows": 34, "columns": 13},
+      {"name": "tpu_cumulative_by_chip.csv", "rows": 59, "columns": 13},
+      {"name": "trainium_cumulative_by_chip.csv", "rows": 16, "columns": 16},
+      {"name": "Nvidia quarterly revenue.csv", "rows": 15, "columns": 17},
+      {"name": "Broadcom_quarterly_revenue.csv", "rows": 12, "columns": 20},
+      {"name": "xai_chip_quantities.csv", "rows": 6, "columns": 14}
+    ],
+    "row_count": 263,
+    "columns": null,
+    "how_to_read": "51 CSVs (sample in files_sample; full list = `ls data/blobs/epoch/ai_chip_counts/`): per-designer chip timelines, cumulative-by-chip, cumulative totals, and owner breakdowns for NVIDIA, AMD, TPU, Trainium, plus some company revenue tables. Directly relevant to AI-chip volumes by designer. Columns vary per file — read the header.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Data CSVs from the epoch-research/ai-chip-counts repo, copied to blobs on 2026-06-12 (CSV-only). Confidence 0.8 (CC BY 4.0).",
+    "inputs": [],
+    "code": null
+  }
+}

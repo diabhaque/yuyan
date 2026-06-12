@@ -1,0 +1,23 @@
+{
+  "id": "rd_epoch-gh-compute-trends_c9e0",
+  "type": "raw_data",
+  "description": "Epoch AI 'Compute-Trends' github repo — analysis of training-compute growth trends (no CSV data export; code/notebooks).",
+  "tags": ["epoch-ai", "github", "compute-trends", "raw", "pointer"],
+  "ts_recorded": "2026-06-12T17:00:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://github.com/epoch-research/Compute-Trends",
+  "body": {
+    "blob_path": null,
+    "format": "github repo (no CSV data files)",
+    "file_count": 0,
+    "how_to_read": "Pointer card: this Epoch repo holds analysis code/notebooks rather than CSV data, so no blob was copied (CSV-only policy). Clone https://github.com/epoch-research/Compute-Trends to retrieve. Compute-growth trend context.",
+    "license": "CC BY 4.0"
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Pointer record for the epoch-research/Compute-Trends repo. No CSV data present at copy time (2026-06-12), so blob_path is null. Confidence 0.8 (CC BY 4.0 source).",
+    "inputs": [],
+    "code": null
+  }
+}
