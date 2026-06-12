@@ -1,0 +1,28 @@
+{
+  "id": "rd_semi-equipment_7a14",
+  "type": "raw_data",
+  "description": "SEMI — monthly equipment billings; North America book-to-bill (22 categories, 7 regions); World Fab Forecast; capacity reports. Leading supply signal.",
+  "tags": ["supply-demand-catalog", "equipment", "capacity", "supply", "leading", "pointer", "free"],
+  "ts_recorded": "2026-06-12T17:30:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://www.semi.org/",
+  "body": {
+    "blob_path": null,
+    "endpoint": "https://www.semi.org/",
+    "provider": "SEMI",
+    "coverage": "Monthly equipment billings; NA book-to-bill; World Fab Forecast; capacity reports.",
+    "access": "free (book-to-bill headline); paid (Fab Forecast, capacity DB)",
+    "update_frequency": "monthly (billings); quarterly (fab)",
+    "signal": "supply (leading)",
+    "model_role": "Fab buildout / future capacity; equipment orders lead output by quarters.",
+    "format": "html/press-release",
+    "how_to_read": "Pointer card (no blob copied). Use the free book-to-bill headline. Leading supply indicator. Free-source catalog entry."
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Transcribed from the semiconductor supply/demand source catalog on 2026-06-12. Pointer record, not yet retrieved. Confidence 0.8.",
+    "inputs": [],
+    "code": null
+  }
+}

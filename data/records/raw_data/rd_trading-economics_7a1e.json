@@ -1,0 +1,28 @@
+{
+  "id": "rd_trading-economics_7a1e",
+  "type": "raw_data",
+  "description": "Trading Economics — aggregates national trade, export, and production series in one place (aggregator).",
+  "tags": ["supply-demand-catalog", "aggregator", "trade-flow", "both", "pointer", "free"],
+  "ts_recorded": "2026-06-12T17:30:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://tradingeconomics.com/",
+  "body": {
+    "blob_path": null,
+    "endpoint": "https://tradingeconomics.com/",
+    "provider": "Trading Economics",
+    "coverage": "Aggregated national trade, export, and production indicators.",
+    "access": "free (basic); paid (API/history)",
+    "update_frequency": "monthly",
+    "signal": "both",
+    "model_role": "One-stop national indicator aggregation.",
+    "format": "html/api",
+    "how_to_read": "Pointer card (no blob copied). Aggregator for national trade/production series. Free-source catalog entry."
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Transcribed from the semiconductor supply/demand source catalog on 2026-06-12. Pointer record, not yet retrieved. Confidence 0.8.",
+    "inputs": [],
+    "code": null
+  }
+}

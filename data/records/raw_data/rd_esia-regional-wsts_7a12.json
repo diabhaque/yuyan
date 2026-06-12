@@ -1,0 +1,28 @@
+{
+  "id": "rd_esia-regional-wsts_7a12",
+  "type": "raw_data",
+  "description": "ESIA / regional associations (JEITA, KSIA, TSIA, CSIA) — regional WSTS data-collection agents; region-specific revenue and product breakouts.",
+  "tags": ["supply-demand-catalog", "trade-statistics", "regional", "both", "pointer", "free"],
+  "ts_recorded": "2026-06-12T17:30:00Z",
+  "ts_applies": null,
+  "confidence": 0.8,
+  "source": "https://www.eusemiconductors.eu/esia/industry-statistics/wsts",
+  "body": {
+    "blob_path": null,
+    "endpoint": "https://www.eusemiconductors.eu/esia/industry-statistics/wsts",
+    "provider": "ESIA / JEITA / KSIA / TSIA / CSIA",
+    "coverage": "Regional WSTS collection agents; region-specific revenue and product breakouts.",
+    "access": "free-headline; paid (subscription)",
+    "update_frequency": "monthly / quarterly",
+    "signal": "both",
+    "model_role": "Regional demand decomposition.",
+    "format": "html",
+    "how_to_read": "Pointer card (no blob copied). Regional WSTS breakouts. Free-source catalog entry for future datapoints."
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Transcribed from the semiconductor supply/demand source catalog on 2026-06-12. Pointer record, not yet retrieved. Confidence 0.8.",
+    "inputs": [],
+    "code": null
+  }
+}
