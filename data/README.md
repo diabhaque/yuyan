@@ -63,6 +63,19 @@ holds the old source-registry CSVs. Both are superseded by records and will be r
 - **Blob cards** (`raw_data`/`processed_data`): `body` must contain at least `blob_path`, `format`,
   `columns` (if tabular), `row_count`, and a `how_to_read` note.
 
+### Blob-card variants
+- **Multi-file dataset** (a directory of CSVs): set `blob_path` to the directory, `format` to
+  `"csv (N files)"`, list `files: [{name, rows, columns}]` (or `files_sample` + `file_count` when
+  there are too many to enumerate), and set top-level `columns` to the primary file's headers or
+  `null` when they vary per file (note it in `how_to_read`). Example: `rd_epoch-benchmarks_b5d6`.
+- **Pointer card** (a known source whose data hasn't been retrieved): set `blob_path: null` and put
+  the access info in `body` (`endpoint`, `provider`, `coverage`, `access`, `update_frequency`,
+  `signal`, `model_role`, `how_to_read`). Columns/row_count are omitted. Used for the free
+  supply/demand source catalog (`rd_wsts-billings_7a10`, …) and github repos with no CSV export.
+- **Shared blob, one record per entity**: many records may point at the *same* blob, each selecting
+  a slice via a `how_to_read` filter — e.g. one `pd_price-<ticker>_*` record per stock over the
+  single `data/blobs/prices.csv` (filter `primary_id == '<ticker>'`).
+
 ## Worked example: chip component spend
 Lineage built by `notebooks/chip_component_spend_v2.ipynb`:
 ```
