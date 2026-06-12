@@ -1,6 +1,0 @@
-component,reconciled_base,low,high,trend_only,confidence,confidence_score,n_anchors,dispersion_cv
-Memory,18.326,14.355,22.297,15.127,medium,0.4,5,0.211
-Logic,2.761,2.584,2.939,2.808,high,0.9,4,0.036
-Packaging,3.106,2.889,3.322,3.206,high,0.87,4,0.044
-Auxiliary,1.824,1.705,1.943,1.868,high,0.89,4,0.037
-TOTAL,26.017,21.533,30.501,23.009,-,,,
