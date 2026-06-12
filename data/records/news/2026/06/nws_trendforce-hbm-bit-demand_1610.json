@@ -2,7 +2,16 @@
   "id": "nws_trendforce-hbm-bit-demand_1610",
   "type": "news",
   "description": "TrendForce 2026 demand: HBM bit demand +70% YoY (+130% in 2025), ASIC-HBM +80%, AI-server units +20%; sources Memory volume.",
-  "tags": ["chip-component-spend", "memory", "logic", "hard", "external-news-industry", "trendforce", "hbm", "volume"],
+  "tags": [
+    "chip-component-spend",
+    "memory",
+    "logic",
+    "hard",
+    "external-news-industry",
+    "trendforce",
+    "hbm",
+    "volume"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2025-10-30",
   "confidence": 0.8,
@@ -11,13 +20,38 @@
     "name": "TrendForce - HBM bit demand & AI server shipments 2026",
     "provenance": "External news - industry",
     "role": "hard",
-    "components": ["Memory", "Logic"],
-    "targets": ["Q1 2026", "Q2 2026"],
+    "components": [
+      "Memory",
+      "Logic"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
     "new_info": "volume",
-    "figures": {"hbm_bit_demand_yoy": 0.70, "hbm_bit_demand_yoy_2025": 1.30, "asic_hbm_demand_yoy": 0.80, "ai_server_shipments_yoy": 0.20, "gpu_shipments_yoy": 0.161, "asic_shipments_yoy": 0.446, "hbm_share_of_dram_wafers": 0.23},
-    "units": {"hbm_bit_demand_yoy": "fraction YoY", "hbm_bit_demand_yoy_2025": "fraction YoY", "asic_hbm_demand_yoy": "fraction YoY", "ai_server_shipments_yoy": "fraction YoY", "gpu_shipments_yoy": "fraction YoY", "asic_shipments_yoy": "fraction YoY", "hbm_share_of_dram_wafers": "fraction of DRAM wafers"}
+    "figures": {
+      "hbm_bit_demand_yoy": 0.7,
+      "hbm_bit_demand_yoy_2025": 1.3,
+      "asic_hbm_demand_yoy": 0.8,
+      "ai_server_shipments_yoy": 0.2,
+      "gpu_shipments_yoy": 0.161,
+      "asic_shipments_yoy": 0.446,
+      "hbm_share_of_dram_wafers": 0.23
+    },
+    "units": {
+      "hbm_bit_demand_yoy": "fraction YoY",
+      "hbm_bit_demand_yoy_2025": "fraction YoY",
+      "asic_hbm_demand_yoy": "fraction YoY",
+      "ai_server_shipments_yoy": "fraction YoY",
+      "gpu_shipments_yoy": "fraction YoY",
+      "asic_shipments_yoy": "fraction YoY",
+      "hbm_share_of_dram_wafers": "fraction of DRAM wafers"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Transcribed from TrendForce's 2026 HBM bit-demand / AI-server-shipments outlook as-of 2025-10-30. Confidence 0.8 by role (hard). Primary source for the Memory volume_qoq leg (YoY->QoQ).",
     "inputs": [],

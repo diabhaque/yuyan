@@ -2,7 +2,14 @@
   "id": "nws_ase-adv-packaging_5050",
   "type": "news",
   "description": "ASE advanced-packaging outlook: ~US$3.5B 2026 revenue (+10% YoY); independent OSAT Packaging anchor.",
-  "tags": ["chip-component-spend", "packaging", "hard", "external-news-company", "ase", "osat"],
+  "tags": [
+    "chip-component-spend",
+    "packaging",
+    "hard",
+    "external-news-company",
+    "ase",
+    "osat"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-01",
   "confidence": 0.8,
@@ -11,13 +18,27 @@
     "name": "ASE (advanced packaging outlook)",
     "provenance": "External news - specific company",
     "role": "hard",
-    "components": ["Packaging"],
-    "targets": ["Q1 2026", "Q2 2026"],
+    "components": [
+      "Packaging"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
     "new_info": "independent-osat",
-    "figures": {"adv_pkg_rev_busd_2026": 3.5, "adv_pkg_growth_yoy": 0.10},
-    "units": {"adv_pkg_rev_busd_2026": "USD billions (CY2026)", "adv_pkg_growth_yoy": "fraction YoY"}
+    "figures": {
+      "adv_pkg_rev_busd_2026": 3.5,
+      "adv_pkg_growth_yoy": 0.1
+    },
+    "units": {
+      "adv_pkg_rev_busd_2026": "USD billions (CY2026)",
+      "adv_pkg_growth_yoy": "fraction YoY"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "ASE advanced-packaging revenue outlook from coverage as-of 2026-01. Confidence 0.8 by role (hard: company-guided figure). Corroborates Packaging with an independent OSAT view.",
     "inputs": [],

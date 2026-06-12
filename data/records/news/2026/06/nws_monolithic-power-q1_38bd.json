@@ -2,7 +2,14 @@
   "id": "nws_monolithic-power-q1_38bd",
   "type": "news",
   "description": "Monolithic Power Q1 2026: AI/data-center revenue US$262.8M (+12.6% QoQ / +97.7% YoY); Auxiliary (power) supply anchor.",
-  "tags": ["chip-component-spend", "auxiliary", "hard", "company-press-release", "monolithic-power", "power"],
+  "tags": [
+    "chip-component-spend",
+    "auxiliary",
+    "hard",
+    "company-press-release",
+    "monolithic-power",
+    "power"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-04-30",
   "confidence": 0.8,
@@ -11,13 +18,29 @@
     "name": "Monolithic Power",
     "provenance": "Company press release",
     "role": "hard",
-    "components": ["Auxiliary"],
-    "targets": ["Q1 2026", "Q2 2026"],
+    "components": [
+      "Auxiliary"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
     "new_info": "power",
-    "figures": {"ai_revenue_musd": 262.8, "ai_revenue_qoq": 0.126, "ai_revenue_yoy": 0.977},
-    "units": {"ai_revenue_musd": "USD millions", "ai_revenue_qoq": "fraction QoQ", "ai_revenue_yoy": "fraction YoY"}
+    "figures": {
+      "ai_revenue_musd": 262.8,
+      "ai_revenue_qoq": 0.126,
+      "ai_revenue_yoy": 0.977
+    },
+    "units": {
+      "ai_revenue_musd": "USD millions",
+      "ai_revenue_qoq": "fraction QoQ",
+      "ai_revenue_yoy": "fraction YoY"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Transcribed from Monolithic Power Q1 2026 investor materials as-of 2026-04-30. Confidence 0.8 by role (hard). Adds independent power-delivery data to Auxiliary.",
     "inputs": [],

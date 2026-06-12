@@ -2,7 +2,14 @@
   "id": "nws_optical-transceivers_b301",
   "type": "news",
   "description": "Optical transceiver market (InnoLight/Coherent): ~US$9B (2024) -> ~US$16B (2026), InnoLight +123% YoY; Auxiliary optical signal.",
-  "tags": ["chip-component-spend", "auxiliary", "analyst", "external-news-industry", "optical", "transceivers"],
+  "tags": [
+    "chip-component-spend",
+    "auxiliary",
+    "analyst",
+    "external-news-industry",
+    "optical",
+    "transceivers"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026",
   "confidence": 0.6,
@@ -11,13 +18,29 @@
     "name": "Optical transceivers (InnoLight/Coherent)",
     "provenance": "External news - industry",
     "role": "analyst",
-    "components": ["Auxiliary"],
-    "targets": ["Q1 2026", "Q2 2026"],
+    "components": [
+      "Auxiliary"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
     "new_info": "optical",
-    "figures": {"market_2024_busd": 9, "market_2026_busd": 16, "innolight_yoy": 1.23},
-    "units": {"market_2024_busd": "USD billions (CY2024)", "market_2026_busd": "USD billions (CY2026)", "innolight_yoy": "fraction YoY"}
+    "figures": {
+      "market_2024_busd": 9,
+      "market_2026_busd": 16,
+      "innolight_yoy": 1.23
+    },
+    "units": {
+      "market_2024_busd": "USD billions (CY2024)",
+      "market_2026_busd": "USD billions (CY2026)",
+      "innolight_yoy": "fraction YoY"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Optical transceiver market sizing from research coverage as-of 2026. Confidence 0.6 by role (analyst market estimate). Auxiliary QoQ derived from the 2024->2026 market CAGR.",
     "inputs": [],

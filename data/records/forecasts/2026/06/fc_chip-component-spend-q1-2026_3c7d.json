@@ -1,0 +1,66 @@
+{
+  "id": "fc_chip-component-spend-q1-2026_3c7d",
+  "type": "forecasts",
+  "description": "Chip component spend nowcast for Q1 2026: $26.0B (NVIDIA/AMD/Google/Amazon), band $21.5-30.5B.",
+  "tags": [
+    "chip-component-spend",
+    "forecast",
+    "nowcast",
+    "2026-q1"
+  ],
+  "ts_recorded": "2026-06-12T10:43:39Z",
+  "ts_applies": "2026-Q1",
+  "confidence": 0.54,
+  "source": "notebook:notebooks/chip_component_spend_v2.ipynb",
+  "body": {
+    "metric": "AI-chip component spend (NVIDIA/AMD/Google/Amazon)",
+    "kind": "nowcast",
+    "horizon": "2026-Q1",
+    "unit": "USD billions",
+    "total": {
+      "base": 26.017,
+      "low": 21.533,
+      "high": 30.501
+    },
+    "components": {
+      "Memory": {
+        "base": 18.326,
+        "low": 14.355,
+        "high": 22.297,
+        "confidence": "medium",
+        "confidence_score": 0.4
+      },
+      "Logic": {
+        "base": 2.761,
+        "low": 2.584,
+        "high": 2.939,
+        "confidence": "high",
+        "confidence_score": 0.9
+      },
+      "Packaging": {
+        "base": 3.106,
+        "low": 2.889,
+        "high": 3.322,
+        "confidence": "high",
+        "confidence_score": 0.87
+      },
+      "Auxiliary": {
+        "base": 1.824,
+        "low": 1.705,
+        "high": 1.943,
+        "confidence": "high",
+        "confidence_score": 0.89
+      }
+    }
+  },
+  "adjacency": [
+    "fc_chip-component-spend-q2-2026_9f2a"
+  ],
+  "methodology": {
+    "summary": "v2 reconcile-and-band engine (nowcast for Q1 2026). Confidence 0.54 = spend-weighted mean of per-component confidence scores. Q2 chains off the Q1 nowcast (uncertainty added in quadrature).",
+    "inputs": [
+      "pd_chip-spend-q1-estimates_ea34"
+    ],
+    "code": "notebooks/chip_component_spend_v2.ipynb"
+  }
+}

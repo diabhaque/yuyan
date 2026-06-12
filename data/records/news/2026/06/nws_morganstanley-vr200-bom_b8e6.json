@@ -2,7 +2,16 @@
   "id": "nws_morganstanley-vr200-bom_b8e6",
   "type": "news",
   "description": "Morgan Stanley VR200 NVL72 bill-of-materials: memory ~4.35x per-rack gen-over-gen, ~26% of system BoM; analyst memory-share trajectory (Q2 tilt).",
-  "tags": ["chip-component-spend", "memory", "packaging", "auxiliary", "analyst", "morgan-stanley", "bom", "memory-share-trajectory"],
+  "tags": [
+    "chip-component-spend",
+    "memory",
+    "packaging",
+    "auxiliary",
+    "analyst",
+    "morgan-stanley",
+    "bom",
+    "memory-share-trajectory"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-06",
   "confidence": 0.6,
@@ -11,13 +20,32 @@
     "name": "Morgan Stanley - VR200 NVL72 BoM",
     "provenance": "Analyst",
     "role": "analyst",
-    "components": ["Memory", "Packaging", "Auxiliary"],
-    "targets": ["Q2 2026"],
+    "components": [
+      "Memory",
+      "Packaging",
+      "Auxiliary"
+    ],
+    "targets": [
+      "Q2 2026"
+    ],
     "new_info": "memory-share-trajectory",
-    "figures": {"memory_per_rack_growth_x": 4.35, "memory_share_vr200": 0.26, "pcb_growth_x": 2.33, "mlcc_growth_x": 1.82},
-    "units": {"memory_per_rack_growth_x": "multiple (x) gen-over-gen", "memory_share_vr200": "fraction of system BoM", "pcb_growth_x": "multiple (x) gen-over-gen", "mlcc_growth_x": "multiple (x) gen-over-gen"}
+    "figures": {
+      "memory_per_rack_growth_x": 4.35,
+      "memory_share_vr200": 0.26,
+      "pcb_growth_x": 2.33,
+      "mlcc_growth_x": 1.82
+    },
+    "units": {
+      "memory_per_rack_growth_x": "multiple (x) gen-over-gen",
+      "memory_share_vr200": "fraction of system BoM",
+      "pcb_growth_x": "multiple (x) gen-over-gen",
+      "mlcc_growth_x": "multiple (x) gen-over-gen"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Morgan Stanley VR200 NVL72 rack BoM via coverage as-of 2026-06. Confidence 0.6 by role (analyst). It is a rack/system BoM (broader than Epoch chip-component scope) and VR200 ramps H2 2026, so used as a memory-share trajectory / upside tilt for Q2, not the Q2 base mix.",
     "inputs": [],

@@ -2,7 +2,14 @@
   "id": "nws_tsmc-q1-rev_5e80",
   "type": "news",
   "description": "TSMC Q1 2026 results: revenue US$35.9B (+40.6% YoY); anchors Logic/Packaging supply for the Q1 2026 nowcast.",
-  "tags": ["chip-component-spend", "logic", "packaging", "hard", "company-press-release", "tsmc"],
+  "tags": [
+    "chip-component-spend",
+    "logic",
+    "packaging",
+    "hard",
+    "company-press-release",
+    "tsmc"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-04-10",
   "confidence": 0.8,
@@ -11,12 +18,26 @@
     "name": "TSMC",
     "provenance": "Company press release",
     "role": "hard",
-    "components": ["Logic", "Packaging"],
-    "targets": ["Q1 2026"],
-    "figures": {"q1_rev_busd": 35.9, "rev_yoy": 0.406},
-    "units": {"q1_rev_busd": "USD billions", "rev_yoy": "fraction YoY"}
+    "components": [
+      "Logic",
+      "Packaging"
+    ],
+    "targets": [
+      "Q1 2026"
+    ],
+    "figures": {
+      "q1_rev_busd": 35.9,
+      "rev_yoy": 0.406
+    },
+    "units": {
+      "q1_rev_busd": "USD billions",
+      "rev_yoy": "fraction YoY"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Figures transcribed from the TSMC Q1 2026 results press release as-of 2026-04-10. Confidence 0.8 by role (hard: audited company financials).",
     "inputs": [],

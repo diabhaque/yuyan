@@ -2,7 +2,14 @@
   "id": "nws_broadcom-q2fy26_6318",
   "type": "news",
   "description": "Broadcom fiscal Q2 2026: AI revenue US$10.8B (+143% YoY); Auxiliary (AI networking) anchor.",
-  "tags": ["chip-component-spend", "auxiliary", "hard", "company-press-release", "broadcom", "networking"],
+  "tags": [
+    "chip-component-spend",
+    "auxiliary",
+    "hard",
+    "company-press-release",
+    "broadcom",
+    "networking"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-06-05",
   "confidence": 0.8,
@@ -11,12 +18,26 @@
     "name": "Broadcom",
     "provenance": "Company press release",
     "role": "hard",
-    "components": ["Auxiliary"],
-    "targets": ["Q1 2026", "Q2 2026"],
-    "figures": {"ai_revenue_busd": 10.8, "ai_revenue_yoy": 1.43},
-    "units": {"ai_revenue_busd": "USD billions", "ai_revenue_yoy": "fraction YoY"}
+    "components": [
+      "Auxiliary"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
+    "figures": {
+      "ai_revenue_busd": 10.8,
+      "ai_revenue_yoy": 1.43
+    },
+    "units": {
+      "ai_revenue_busd": "USD billions",
+      "ai_revenue_yoy": "fraction YoY"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Transcribed from Broadcom fiscal-Q2-2026 results as-of 2026-06-05. Confidence 0.8 by role (hard). AI networking is a subset of Auxiliary (directional, not 1:1).",
     "inputs": [],

@@ -1,0 +1,72 @@
+{
+  "id": "pd_chip-spend-q1-estimates_ea34",
+  "type": "processed_data",
+  "description": "Chip component spend Q1 2026 per-component estimate table (reconciled base, low/high band, confidence) from v2.",
+  "tags": [
+    "chip-component-spend",
+    "estimates",
+    "2026-q1",
+    "processed"
+  ],
+  "ts_recorded": "2026-06-12T10:43:39Z",
+  "ts_applies": "2026-Q1",
+  "confidence": 0.6,
+  "source": "notebook:notebooks/chip_component_spend_v2.ipynb",
+  "body": {
+    "blob_path": "data/blobs/chip_component_spend_q1_2026_estimates.csv",
+    "format": "csv",
+    "columns": [
+      "component",
+      "reconciled_base",
+      "low",
+      "high",
+      "trend_only",
+      "confidence",
+      "confidence_score",
+      "n_anchors",
+      "dispersion_cv"
+    ],
+    "row_count": 5,
+    "units": {
+      "reconciled_base": "USD billions",
+      "low": "USD billions",
+      "high": "USD billions",
+      "trend_only": "USD billions"
+    },
+    "how_to_read": "One row per component plus a TOTAL row; reconciled_base is the central estimate, low/high the band."
+  },
+  "adjacency": [
+    "pd_chip-spend-q2-estimates_1f45",
+    "fc_chip-component-spend-q1-2026_3c7d"
+  ],
+  "methodology": {
+    "summary": "v2 engine output for Q1 2026: reconciled weighted blend of estimate families with a data-driven band.",
+    "inputs": [
+      "pd_chip-spend-history_7d52",
+      "nws_optical-transceivers_b301",
+      "nws_tsmc-q2-guide_9495",
+      "nws_nvidia-q1fy27_20cf",
+      "nws_trendforce-dram-q2_bc2a",
+      "nws_morganstanley-vr200-bom_b8e6",
+      "nws_sk-hynix-q1_71b0",
+      "nws_samsung-q1_7338",
+      "nws_astera-labs-q1_2691",
+      "nws_ase-adv-packaging_5050",
+      "nws_nvidia-blackwell-shipments_e53f",
+      "nws_trendforce-dram-q1_7636",
+      "nws_trendforce-hbm-bit-supply_ca9b",
+      "nws_trendforce-hbm-bit-demand_1610",
+      "nws_tsmc-q1-rev_5e80",
+      "nws_broadcom-q2fy26_6318",
+      "nws_monolithic-power-q1_38bd",
+      "nws_tsmc-hpc-platform_b357",
+      "nws_murata-mlcc_754b",
+      "nws_trendforce-cowos-capacity_5c9a",
+      "nws_micron-q2fy26_0bd4",
+      "fct_amkor-10q_bbe3",
+      "fct_korea-motie-customs_23ee",
+      "fct_fred-ipg3344s_1612"
+    ],
+    "code": "notebooks/chip_component_spend_v2.ipynb"
+  }
+}

@@ -2,7 +2,14 @@
   "id": "nws_micron-q2fy26_0bd4",
   "type": "news",
   "description": "Micron fiscal Q2 2026 results: revenue +196% YoY; corroborating Memory supply anchor.",
-  "tags": ["chip-component-spend", "memory", "hard", "company-press-release", "micron", "hbm"],
+  "tags": [
+    "chip-component-spend",
+    "memory",
+    "hard",
+    "company-press-release",
+    "micron",
+    "hbm"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-03-18",
   "confidence": 0.8,
@@ -11,12 +18,24 @@
     "name": "Micron",
     "provenance": "Company press release",
     "role": "hard",
-    "components": ["Memory"],
-    "targets": ["Q1 2026", "Q2 2026"],
-    "figures": {"revenue_yoy": 1.96},
-    "units": {"revenue_yoy": "fraction YoY"}
+    "components": [
+      "Memory"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
+    "figures": {
+      "revenue_yoy": 1.96
+    },
+    "units": {
+      "revenue_yoy": "fraction YoY"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Transcribed from Micron fiscal-Q2-2026 results as-of 2026-03-18. Confidence 0.8 by role (hard: audited company financials).",
     "inputs": [],

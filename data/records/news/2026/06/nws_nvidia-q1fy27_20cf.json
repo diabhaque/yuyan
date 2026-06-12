@@ -2,7 +2,15 @@
   "id": "nws_nvidia-q1fy27_20cf",
   "type": "news",
   "description": "NVIDIA fiscal Q1 2027 results: revenue US$81.6B (+85% YoY), data-center ~90% of revenue (~2x YoY); directional buyer-demand signal.",
-  "tags": ["chip-component-spend", "logic", "auxiliary", "qualitative", "company-press-release", "nvidia", "demand"],
+  "tags": [
+    "chip-component-spend",
+    "logic",
+    "auxiliary",
+    "qualitative",
+    "company-press-release",
+    "nvidia",
+    "demand"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-05-20",
   "confidence": 0.4,
@@ -11,12 +19,31 @@
     "name": "NVIDIA",
     "provenance": "Company press release",
     "role": "qualitative",
-    "components": ["Logic", "Auxiliary"],
-    "targets": ["Q1 2026", "Q2 2026"],
-    "figures": {"total_rev_busd": 81.6, "total_yoy": 0.85, "dc_share": 0.90, "dc_yoy_approx": 1.0},
-    "units": {"total_rev_busd": "USD billions", "total_yoy": "fraction YoY", "dc_share": "fraction of revenue", "dc_yoy_approx": "fraction YoY (approx)"}
+    "components": [
+      "Logic",
+      "Auxiliary"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
+    "figures": {
+      "total_rev_busd": 81.6,
+      "total_yoy": 0.85,
+      "dc_share": 0.9,
+      "dc_yoy_approx": 1.0
+    },
+    "units": {
+      "total_rev_busd": "USD billions",
+      "total_yoy": "fraction YoY",
+      "dc_share": "fraction of revenue",
+      "dc_yoy_approx": "fraction YoY (approx)"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Transcribed from NVIDIA fiscal-Q1-2027 results as-of 2026-05-20. Used as a directional buyer-demand scaler (NVIDIA's per-component split is not disclosed), hence confidence 0.4 by role (qualitative).",
     "inputs": [],

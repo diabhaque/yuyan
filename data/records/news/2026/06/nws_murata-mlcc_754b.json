@@ -1,8 +1,16 @@
 {
   "id": "nws_murata-mlcc_754b",
   "type": "news",
-  "description": "Murata MLCC (passives): price +15–35%, ~10–15x MLCC content per AI server; Auxiliary passives price (Q2).",
-  "tags": ["chip-component-spend", "auxiliary", "hard-price", "external-news-industry", "murata", "mlcc", "passives-price"],
+  "description": "Murata MLCC (passives): price +15\u201335%, ~10\u201315x MLCC content per AI server; Auxiliary passives price (Q2).",
+  "tags": [
+    "chip-component-spend",
+    "auxiliary",
+    "hard-price",
+    "external-news-industry",
+    "murata",
+    "mlcc",
+    "passives-price"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-03-17",
   "confidence": 0.8,
@@ -11,13 +19,32 @@
     "name": "Murata MLCC (passives price)",
     "provenance": "External news - industry",
     "role": "hard-price",
-    "components": ["Auxiliary"],
-    "targets": ["Q2 2026"],
+    "components": [
+      "Auxiliary"
+    ],
+    "targets": [
+      "Q2 2026"
+    ],
     "new_info": "passives-price",
-    "figures": {"price_increase_range": [0.15, 0.35], "mlcc_per_ai_server_x": [10, 15]},
-    "units": {"price_increase_range": "fraction [low,high]", "mlcc_per_ai_server_x": "multiple (x) vs standard server [low,high]"}
+    "figures": {
+      "price_increase_range": [
+        0.15,
+        0.35
+      ],
+      "mlcc_per_ai_server_x": [
+        10,
+        15
+      ]
+    },
+    "units": {
+      "price_increase_range": "fraction [low,high]",
+      "mlcc_per_ai_server_x": "multiple (x) vs standard server [low,high]"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Transcribed from Murata MLCC capacity/price coverage as-of 2026-03-17. Confidence 0.8 by role (hard-price). Adds a passives price signal to Auxiliary for Q2.",
     "inputs": [],

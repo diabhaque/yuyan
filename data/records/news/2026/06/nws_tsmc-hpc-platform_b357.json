@@ -2,7 +2,14 @@
   "id": "nws_tsmc-hpc-platform_b357",
   "type": "news",
   "description": "TSMC Q1 2026 earnings coverage: HPC platform 61% of revenue (+20% QoQ), up from 55%; Logic supply anchor.",
-  "tags": ["chip-component-spend", "logic", "hard", "external-news-company", "tsmc", "hpc"],
+  "tags": [
+    "chip-component-spend",
+    "logic",
+    "hard",
+    "external-news-company",
+    "tsmc",
+    "hpc"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-04-16",
   "confidence": 0.8,
@@ -11,12 +18,28 @@
     "name": "TSMC HPC platform (earnings coverage)",
     "provenance": "External news - specific company",
     "role": "hard",
-    "components": ["Logic"],
-    "targets": ["Q1 2026", "Q2 2026"],
-    "figures": {"hpc_share": 0.61, "hpc_qoq": 0.20, "prev_hpc_share": 0.55},
-    "units": {"hpc_share": "fraction of revenue", "hpc_qoq": "fraction QoQ", "prev_hpc_share": "fraction of revenue"}
+    "components": [
+      "Logic"
+    ],
+    "targets": [
+      "Q1 2026",
+      "Q2 2026"
+    ],
+    "figures": {
+      "hpc_share": 0.61,
+      "hpc_qoq": 0.2,
+      "prev_hpc_share": 0.55
+    },
+    "units": {
+      "hpc_share": "fraction of revenue",
+      "hpc_qoq": "fraction QoQ",
+      "prev_hpc_share": "fraction of revenue"
+    }
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
     "summary": "Figures from third-party coverage of TSMC's Q1 2026 earnings call as-of 2026-04-16. Confidence 0.8 by role (hard: quantified from the company call). TSMC HPC is broader than these four designers' logic dies (directional).",
     "inputs": [],

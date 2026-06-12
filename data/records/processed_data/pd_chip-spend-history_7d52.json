@@ -1,8 +1,17 @@
 {
   "id": "pd_chip-spend-history_7d52",
   "type": "processed_data",
-  "description": "Quarterly AI-chip component spend (Memory/Logic/Packaging/Auxiliary + Total), USD billions, summed across NVIDIA/AMD/Google/Amazon, Q1 2024–Q4 2025.",
-  "tags": ["chip-component-spend", "history", "quarterly", "processed", "memory", "logic", "packaging", "auxiliary"],
+  "description": "Quarterly AI-chip component spend (Memory/Logic/Packaging/Auxiliary + Total), USD billions, summed across NVIDIA/AMD/Google/Amazon, Q1 2024\u2013Q4 2025.",
+  "tags": [
+    "chip-component-spend",
+    "history",
+    "quarterly",
+    "processed",
+    "memory",
+    "logic",
+    "packaging",
+    "auxiliary"
+  ],
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2024-Q1/2025-Q4",
   "confidence": 0.8,
@@ -11,7 +20,14 @@
     "blob_path": "data/blobs/chip_component_spend_history_quarterly.csv",
     "format": "csv",
     "row_count": 8,
-    "columns": ["Quarter", "Memory", "Logic", "Packaging", "Auxiliary", "Total"],
+    "columns": [
+      "Quarter",
+      "Memory",
+      "Logic",
+      "Packaging",
+      "Auxiliary",
+      "Total"
+    ],
     "units": {
       "Quarter": "calendar quarter",
       "Memory": "USD billions",
@@ -22,20 +38,81 @@
     },
     "how_to_read": "One row per quarter. Memory = sum of HBM cost; Logic/Packaging/Auxiliary likewise; across the four designers' chips, in USD billions. Q1 2026 excluded (incomplete in source). Convenience copy of the rows is in body.values.",
     "values": [
-      {"Quarter": "Q1 2024", "Memory": 1.6773, "Logic": 0.4579, "Packaging": 0.6109, "Auxiliary": 0.4875, "Total": 3.2336},
-      {"Quarter": "Q2 2024", "Memory": 2.3065, "Logic": 0.5808, "Packaging": 0.7745, "Auxiliary": 0.6061, "Total": 4.2679},
-      {"Quarter": "Q3 2024", "Memory": 3.3393, "Logic": 0.8227, "Packaging": 1.073, "Auxiliary": 0.7389, "Total": 5.9739},
-      {"Quarter": "Q4 2024", "Memory": 4.8054, "Logic": 1.2289, "Packaging": 1.5148, "Auxiliary": 0.9523, "Total": 8.5014},
-      {"Quarter": "Q1 2025", "Memory": 5.5342, "Logic": 1.4082, "Packaging": 1.6949, "Auxiliary": 1.2167, "Total": 9.854},
-      {"Quarter": "Q2 2025", "Memory": 6.2846, "Logic": 1.5063, "Packaging": 1.7979, "Auxiliary": 1.1499, "Total": 10.7387},
-      {"Quarter": "Q3 2025", "Memory": 8.7238, "Logic": 1.8867, "Packaging": 2.2416, "Auxiliary": 1.3816, "Total": 14.2337},
-      {"Quarter": "Q4 2025", "Memory": 11.0007, "Logic": 2.2421, "Packaging": 2.5715, "Auxiliary": 1.5319, "Total": 17.3462}
+      {
+        "Quarter": "Q1 2024",
+        "Memory": 1.6773,
+        "Logic": 0.4579,
+        "Packaging": 0.6109,
+        "Auxiliary": 0.4875,
+        "Total": 3.2336
+      },
+      {
+        "Quarter": "Q2 2024",
+        "Memory": 2.3065,
+        "Logic": 0.5808,
+        "Packaging": 0.7745,
+        "Auxiliary": 0.6061,
+        "Total": 4.2679
+      },
+      {
+        "Quarter": "Q3 2024",
+        "Memory": 3.3393,
+        "Logic": 0.8227,
+        "Packaging": 1.073,
+        "Auxiliary": 0.7389,
+        "Total": 5.9739
+      },
+      {
+        "Quarter": "Q4 2024",
+        "Memory": 4.8054,
+        "Logic": 1.2289,
+        "Packaging": 1.5148,
+        "Auxiliary": 0.9523,
+        "Total": 8.5014
+      },
+      {
+        "Quarter": "Q1 2025",
+        "Memory": 5.5342,
+        "Logic": 1.4082,
+        "Packaging": 1.6949,
+        "Auxiliary": 1.2167,
+        "Total": 9.854
+      },
+      {
+        "Quarter": "Q2 2025",
+        "Memory": 6.2846,
+        "Logic": 1.5063,
+        "Packaging": 1.7979,
+        "Auxiliary": 1.1499,
+        "Total": 10.7387
+      },
+      {
+        "Quarter": "Q3 2025",
+        "Memory": 8.7238,
+        "Logic": 1.8867,
+        "Packaging": 2.2416,
+        "Auxiliary": 1.3816,
+        "Total": 14.2337
+      },
+      {
+        "Quarter": "Q4 2025",
+        "Memory": 11.0007,
+        "Logic": 2.2421,
+        "Packaging": 2.5715,
+        "Auxiliary": 1.5319,
+        "Total": 17.3462
+      }
     ]
   },
-  "adjacency": [],
+  "adjacency": [
+    "pd_chip-spend-q1-estimates_ea34",
+    "pd_chip-spend-q2-estimates_1f45"
+  ],
   "methodology": {
-    "summary": "Filtered the Epoch ai_chip_components export to Designer in [NVIDIA, AMD, Google, Amazon], summed per-component median USD costs per quarter, divided by 1e9 to USD-billions, dropped incomplete Q1 2026. Confidence 0.8 inherited from the raw source. Derivation mirrors §1 of chip_component_spend.ipynb.",
-    "inputs": ["rd_epoch-chip-components_8b0f"],
+    "summary": "Filtered the Epoch ai_chip_components export to Designer in [NVIDIA, AMD, Google, Amazon], summed per-component median USD costs per quarter, divided by 1e9 to USD-billions, dropped incomplete Q1 2026. Confidence 0.8 inherited from the raw source. Derivation mirrors \u00a71 of chip_component_spend.ipynb.",
+    "inputs": [
+      "rd_epoch-chip-components_8b0f"
+    ],
     "code": "notebooks/chip_component_spend.ipynb"
   }
 }
