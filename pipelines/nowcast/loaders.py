@@ -31,6 +31,7 @@ def fetch() -> None:
     # Retrieval manifest.
     man = pl.DataFrame([
         {"source": s["name"], "family": s["family"], "type": s["confidence"],
+         "new_info": s.get("new_info", ""), "targets": ",".join(s["targets"]),
          "period": s["period"], "url": s["url"], "as_of": s["as_of"],
          "component": ",".join(s["component"])}
         for s in SOURCES

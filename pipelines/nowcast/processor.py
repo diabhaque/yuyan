@@ -25,21 +25,20 @@ def _fred_recent_yoy() -> str:
 def process() -> None:
     config.PROC_DIR.mkdir(parents=True, exist_ok=True)
 
-    company = [s for s in SOURCES if s["family"] == "A"]
-    price = [s for s in SOURCES if s["family"] == "B"]
-    macro = [s for s in SOURCES if s["family"] == "C"]
-
-    def tidy(rows):
+    def tidy(fam):
         return pl.DataFrame([
             {"source": s["name"], "metric": s["metric"], "value": s["value"],
              "period": s["period"], "component": ",".join(s["component"]),
-             "confidence": s["confidence"], "url": s["url"], "as_of": s["as_of"], "note": s["note"]}
-            for s in rows
+             "targets": ",".join(s["targets"]), "confidence": s["confidence"],
+             "new_info": s.get("new_info", ""),
+             "url": s["url"], "as_of": s["as_of"], "note": s["note"]}
+            for s in SOURCES if s["family"] == fam
         ])
 
-    tidy(company).write_csv(config.PROC_DIR / "company.csv")
-    tidy(price).write_csv(config.PROC_DIR / "price.csv")
-    macro_df = tidy(macro)
+    tidy("A").write_csv(config.PROC_DIR / "company.csv")
+    tidy("B").write_csv(config.PROC_DIR / "price.csv")
+    tidy("D").write_csv(config.PROC_DIR / "analyst.csv")
+    macro_df = tidy("C")
     # Append the live FRED-derived figure as a structured macro row.
     macro_df = macro_df.with_columns(
         pl.when(pl.col("source") == "FRED IPG3344S").then(pl.lit(_fred_recent_yoy()))
@@ -51,6 +50,7 @@ def process() -> None:
     DATASOURCES.parent.mkdir(parents=True, exist_ok=True)
     pl.DataFrame([
         {"source": s["name"], "family": s["family"], "type": s["confidence"],
+         "new_info": s.get("new_info", ""), "targets": ",".join(s["targets"]),
          "period": s["period"], "url": s["url"], "as_of": s["as_of"],
          "component": ",".join(s["component"]), "metric": s["metric"], "value": s["value"]}
         for s in SOURCES

@@ -2,7 +2,7 @@
 
 import sys
 
-from . import loaders, model, processor
+from . import config, loaders, model, processor
 
 
 def main() -> None:
@@ -14,8 +14,9 @@ def main() -> None:
         print("[process] -> data/processed/nowcast/")
         processor.process()
     if cmd in ("model", "all"):
-        print("[model] nowcast ->")
-        model.run()
+        print("[model] targets (chained):")
+        for target in config.RUN_ORDER:  # Q1 nowcast before Q2 forecast (chaining)
+            model.run(target)
     if cmd not in ("fetch", "process", "model", "all"):
         print(f"unknown command {cmd!r}; use fetch | process | model | all")
         sys.exit(1)
