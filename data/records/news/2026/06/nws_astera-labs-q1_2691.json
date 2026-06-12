@@ -1,0 +1,26 @@
+{
+  "id": "nws_astera-labs-q1_2691",
+  "type": "news",
+  "description": "Astera Labs Q1 2026 results: revenue US$308.4M (+14% QoQ / +93% YoY); Auxiliary (connectivity) supply anchor.",
+  "tags": ["chip-component-spend", "auxiliary", "hard", "company-press-release", "astera-labs", "connectivity"],
+  "ts_recorded": "2026-06-12T16:30:00Z",
+  "ts_applies": "2026-05-05",
+  "confidence": 0.8,
+  "source": "https://ir.asteralabs.com/news-releases/news-release-details/astera-labs-reports-first-quarter-2026-financial-results",
+  "body": {
+    "name": "Astera Labs",
+    "provenance": "Company press release",
+    "role": "hard",
+    "components": ["Auxiliary"],
+    "targets": ["Q1 2026", "Q2 2026"],
+    "new_info": "connectivity",
+    "figures": {"revenue_musd": 308.4, "revenue_qoq": 0.14, "revenue_yoy": 0.93},
+    "units": {"revenue_musd": "USD millions", "revenue_qoq": "fraction QoQ", "revenue_yoy": "fraction YoY"}
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Transcribed from Astera Labs Q1 2026 results as-of 2026-05-05. Confidence 0.8 by role (hard: audited company financials). Adds independent connectivity data to Auxiliary.",
+    "inputs": [],
+    "code": null
+  }
+}

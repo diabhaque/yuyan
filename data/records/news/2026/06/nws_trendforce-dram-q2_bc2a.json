@@ -1,0 +1,25 @@
+{
+  "id": "nws_trendforce-dram-q2_bc2a",
+  "type": "news",
+  "description": "TrendForce 2Q26 DRAM/NAND contract-price outlook: DRAM +58–63% QoQ, NAND +70–75%; Memory price leg (Q2 forecast).",
+  "tags": ["chip-component-spend", "memory", "hard-price", "external-news-industry", "trendforce", "dram", "price"],
+  "ts_recorded": "2026-06-12T16:30:00Z",
+  "ts_applies": "2026-03-31",
+  "confidence": 0.8,
+  "source": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
+  "body": {
+    "name": "TrendForce - DRAM/NAND contract price (Q2)",
+    "provenance": "External news - industry",
+    "role": "hard-price",
+    "components": ["Memory"],
+    "targets": ["Q2 2026"],
+    "figures": {"dram_contract_qoq_range": [0.58, 0.63], "nand_qoq_range": [0.70, 0.75]},
+    "units": {"dram_contract_qoq_range": "fraction QoQ [low,high]", "nand_qoq_range": "fraction QoQ [low,high]"}
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Transcribed from TrendForce's 2Q26 contract-price press release as-of 2026-03-31. Confidence 0.8 by role (hard-price). DRAM contract range used as the Memory price proxy for Q2.",
+    "inputs": [],
+    "code": null
+  }
+}

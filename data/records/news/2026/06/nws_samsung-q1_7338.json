@@ -1,0 +1,25 @@
+{
+  "id": "nws_samsung-q1_7338",
+  "type": "news",
+  "description": "Samsung Q1 2026 results: memory operating profit up ~50x YoY; directional (qualitative) Memory signal.",
+  "tags": ["chip-component-spend", "memory", "qualitative", "company-press-release", "samsung"],
+  "ts_recorded": "2026-06-12T16:30:00Z",
+  "ts_applies": "2026-04-30",
+  "confidence": 0.4,
+  "source": "https://news.samsung.com/global/samsung-electronics-announces-first-quarter-2026-results",
+  "body": {
+    "name": "Samsung",
+    "provenance": "Company press release",
+    "role": "qualitative",
+    "components": ["Memory"],
+    "targets": ["Q1 2026", "Q2 2026"],
+    "figures": {"memory_op_profit_yoy_x": 50},
+    "units": {"memory_op_profit_yoy_x": "multiple (x) YoY"}
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Transcribed from Samsung Q1 2026 results as-of 2026-04-30. Confidence 0.4 by role (qualitative: profit-multiple is directional, not a clean spend/volume figure for these four designers).",
+    "inputs": [],
+    "code": null
+  }
+}

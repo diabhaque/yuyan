@@ -1,0 +1,25 @@
+{
+  "id": "fct_korea-motie-customs_23ee",
+  "type": "facts",
+  "description": "Korea MOTIE/customs: semiconductor exports ~+100% YoY (~2x); macro quarter-pace confirmation for the macro scaler.",
+  "tags": ["chip-component-spend", "all", "macro", "government-macro", "korea", "exports"],
+  "ts_recorded": "2026-06-12T16:30:00Z",
+  "ts_applies": "2026-04-01",
+  "confidence": 0.8,
+  "source": "https://en.sedaily.com/finance/2026/04/01/semiconductor-power-defies-war-monthly-exports-head-toward",
+  "body": {
+    "name": "Korea MOTIE / customs",
+    "provenance": "Government / macro",
+    "role": "macro",
+    "components": ["all"],
+    "targets": ["Q1 2026", "Q2 2026"],
+    "figures": {"semi_exports_yoy": 2.0},
+    "units": {"semi_exports_yoy": "fraction YoY"}
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Korea Ministry of Trade / customs semiconductor export growth as-of 2026-04-01. Confidence 0.8 (official government trade statistics). Used as a binary confirmation (>100% YoY) in the macro pace tilt.",
+    "inputs": [],
+    "code": null
+  }
+}

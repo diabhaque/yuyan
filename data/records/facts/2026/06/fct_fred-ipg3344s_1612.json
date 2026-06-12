@@ -1,0 +1,25 @@
+{
+  "id": "fct_fred-ipg3344s_1612",
+  "type": "facts",
+  "description": "FRED IPG3344S US semiconductor industrial production: +9.86% YoY latest, +11.92% YoY one quarter earlier; macro momentum input.",
+  "tags": ["chip-component-spend", "all", "macro", "government-macro", "fred", "industrial-production"],
+  "ts_recorded": "2026-06-12T16:30:00Z",
+  "ts_applies": "2026-04-01",
+  "confidence": 0.8,
+  "source": "https://fred.stlouisfed.org/series/IPG3344S",
+  "body": {
+    "name": "FRED IPG3344S (US semis IP)",
+    "provenance": "Government / macro",
+    "role": "macro",
+    "components": ["all"],
+    "targets": ["Q1 2026", "Q2 2026"],
+    "figures": {"ip_yoy": 0.0986, "ip_yoy_prev_q": 0.1192},
+    "units": {"ip_yoy": "fraction YoY", "ip_yoy_prev_q": "fraction YoY (one quarter earlier)"}
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Pinned values from the FRED IPG3344S series (US semiconductor & electronic component industrial production), as fetched live by the original notebook on 2026-04-01 (latest=+9.86% YoY; one quarter earlier=+11.92% YoY). Pinned (not live) so v2 is deterministic; a future refresh would re-fetch and write a new facts record. Confidence 0.8 (official Federal Reserve data). Macro tilt uses the YoY deceleration (ip_yoy - ip_yoy_prev_q).",
+    "inputs": [],
+    "code": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "nws_trendforce-hbm-bit-supply_ca9b",
+  "type": "news",
+  "description": "TrendForce: HBM bit supply capacity-constrained for 2026; Micron capex ~US$13.5B, SK hynix ~US$20.5B; Memory volume ceiling.",
+  "tags": ["chip-component-spend", "memory", "hard", "external-news-industry", "trendforce", "hbm", "volume-ceiling"],
+  "ts_recorded": "2026-06-12T16:30:00Z",
+  "ts_applies": "2025-11-13",
+  "confidence": 0.8,
+  "source": "https://www.trendforce.com/presscenter/news/20251113-12780.html",
+  "body": {
+    "name": "TrendForce - HBM bit supply / capex",
+    "provenance": "External news - industry",
+    "role": "hard",
+    "components": ["Memory"],
+    "targets": ["Q1 2026", "Q2 2026"],
+    "new_info": "volume-ceiling",
+    "figures": {"bit_supply": "capacity-constrained", "micron_capex_busd": 13.5, "skhynix_capex_busd": 20.5},
+    "units": {"bit_supply": "qualitative", "micron_capex_busd": "USD billions", "skhynix_capex_busd": "USD billions"}
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Transcribed from TrendForce HBM bit-supply/capex coverage as-of 2025-11-13. Confidence 0.8 by role (hard). Caps the plausible Memory bit-volume upside.",
+    "inputs": [],
+    "code": null
+  }
+}

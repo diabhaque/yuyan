@@ -1,0 +1,26 @@
+{
+  "id": "nws_nvidia-blackwell-shipments_e53f",
+  "type": "news",
+  "description": "Analyst estimate of 2026 NVIDIA Blackwell volumes: ~60k racks, ~4.3M GPUs, ~71% of GPU shipments; Logic volume signal.",
+  "tags": ["chip-component-spend", "logic", "analyst", "external-news-company", "nvidia", "blackwell", "volume"],
+  "ts_recorded": "2026-06-12T16:30:00Z",
+  "ts_applies": "2025-12-29",
+  "confidence": 0.6,
+  "source": "https://finance.biggo.com/news/g-whcJ0Bq7sy_YQMfkDE",
+  "body": {
+    "name": "NVIDIA Blackwell shipments (analyst)",
+    "provenance": "External news - specific company",
+    "role": "analyst",
+    "components": ["Logic"],
+    "targets": ["Q1 2026", "Q2 2026"],
+    "new_info": "volume",
+    "figures": {"racks_2026": 60000, "gpus_2026": 4300000, "blackwell_share": 0.71},
+    "units": {"racks_2026": "racks (units, CY2026)", "gpus_2026": "GPUs (units, CY2026)", "blackwell_share": "fraction of GPU shipments"}
+  },
+  "adjacency": [],
+  "methodology": {
+    "summary": "Analyst shipment estimate as-of 2025-12-29. Confidence 0.6 by role (analyst projection, not company-reported).",
+    "inputs": [],
+    "code": null
+  }
+}
