@@ -30,12 +30,18 @@
     "figures": {
       "bit_supply": "capacity-constrained",
       "micron_capex_busd": 13.5,
-      "skhynix_capex_busd": 20.5
+      "skhynix_capex_busd": 20.5,
+      "hbm4_mass_production_year": 2026,
+      "micron_capex_yoy": 0.23,
+      "skhynix_capex_yoy": 0.17
     },
     "units": {
       "bit_supply": "qualitative",
       "micron_capex_busd": "USD billions",
-      "skhynix_capex_busd": "USD billions"
+      "skhynix_capex_busd": "USD billions",
+      "hbm4_mass_production_year": "calendar year (HBM4 mass production begins)",
+      "micron_capex_yoy": "fraction YoY",
+      "skhynix_capex_yoy": "fraction YoY"
     }
   },
   "adjacency": [
@@ -43,7 +49,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from TrendForce HBM bit-supply/capex coverage as-of 2025-11-13. Confidence 0.8 by role (hard). Caps the plausible Memory bit-volume upside.",
+    "summary": "Transcribed from TrendForce HBM bit-supply/capex coverage as-of 2025-11-13. Confidence 0.8 by role (hard). Caps the plausible Memory bit-volume upside. Enriched 2026-06-12 from the source registry (added HBM4 mass-production year + capex YoY growth); TrendForce is bot-walled so the page was not fetched.",
     "inputs": [],
     "code": null
   }

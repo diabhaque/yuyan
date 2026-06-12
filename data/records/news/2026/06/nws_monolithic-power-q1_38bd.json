@@ -13,7 +13,7 @@
   "ts_recorded": "2026-06-12T16:30:00Z",
   "ts_applies": "2026-04-30",
   "confidence": 0.8,
-  "source": "https://www.monolithicpower.com/en/company/investor-relations",
+  "source": "https://www.sec.gov/Archives/edgar/data/0001280452/000143774926014182/ex_929254.htm",
   "body": {
     "name": "Monolithic Power",
     "provenance": "Company press release",
@@ -29,12 +29,14 @@
     "figures": {
       "ai_revenue_musd": 262.8,
       "ai_revenue_qoq": 0.126,
-      "ai_revenue_yoy": 0.977
+      "ai_revenue_yoy": 0.977,
+      "growth_floor_yoy": 0.85
     },
     "units": {
       "ai_revenue_musd": "USD millions",
       "ai_revenue_qoq": "fraction QoQ",
-      "ai_revenue_yoy": "fraction YoY"
+      "ai_revenue_yoy": "fraction YoY",
+      "growth_floor_yoy": "fraction YoY (raised full-year growth floor)"
     }
   },
   "adjacency": [
@@ -42,7 +44,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from Monolithic Power Q1 2026 investor materials as-of 2026-04-30. Confidence 0.8 by role (hard). Adds independent power-delivery data to Auxiliary.",
+    "summary": "Transcribed from Monolithic Power Q1 2026 results as-of 2026-04-30. Confidence 0.8 by role (hard). Adds independent power-delivery data to Auxiliary. Enriched 2026-06-12: source updated to the primary SEC 8-K EX-99 exhibit (was the IR homepage) and added the raised ~85% YoY growth floor; SEC.gov fetch returned HTTP 403 and was not circumvented.",
     "inputs": [],
     "code": null
   }

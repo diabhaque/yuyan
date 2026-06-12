@@ -29,13 +29,15 @@
       "apr_rev_yoy": 0.175,
       "q1_rev_busd": 35.9,
       "q2_guide_low_busd": 39.0,
-      "q2_guide_high_busd": 40.2
+      "q2_guide_high_busd": 40.2,
+      "apr_rev_ntbn": 410.73
     },
     "units": {
       "apr_rev_yoy": "fraction YoY",
       "q1_rev_busd": "USD billions",
       "q2_guide_low_busd": "USD billions",
-      "q2_guide_high_busd": "USD billions"
+      "q2_guide_high_busd": "USD billions",
+      "apr_rev_ntbn": "NT$ billions (April 2026 monthly revenue)"
     }
   },
   "adjacency": [
@@ -43,7 +45,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from TSMC's April-2026 monthly sales release and Q2 2026 guidance as-of 2026-05-08. Confidence 0.8 by role (hard: company guidance/actuals).",
+    "summary": "Transcribed from TSMC's April-2026 monthly sales release and Q2 2026 guidance as-of 2026-05-08. Confidence 0.8 by role (hard: company guidance/actuals). Enriched 2026-06-12 from the source registry (April absolute NT$410.73B); live page fetch returned HTTP 403 (bot-walled) and was not circumvented.",
     "inputs": [],
     "code": null
   }

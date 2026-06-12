@@ -38,14 +38,15 @@
     "units": {
       "dram_contract_qoq_range": "fraction QoQ [low,high]",
       "nand_qoq_range": "fraction QoQ [low,high]"
-    }
+    },
+    "notes": "Makers prioritizing server DRAM and HBM supply allocation in Q2 2026."
   },
   "adjacency": [
     "pd_chip-spend-q1-estimates_ea34",
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from TrendForce's 2Q26 contract-price press release as-of 2026-03-31. Confidence 0.8 by role (hard-price). DRAM contract range used as the Memory price proxy for Q2.",
+    "summary": "Transcribed from TrendForce's 2Q26 contract-price press release as-of 2026-03-31. Confidence 0.8 by role (hard-price). DRAM contract range used as the Memory price proxy for Q2. Enriched 2026-06-12 from the source registry (server/HBM allocation-priority note); TrendForce is bot-walled so the page was not fetched.",
     "inputs": [],
     "code": null
   }

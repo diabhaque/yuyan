@@ -29,12 +29,14 @@
     "figures": {
       "market_2024_busd": 9,
       "market_2026_busd": 16,
-      "innolight_yoy": 1.23
+      "innolight_yoy": 1.23,
+      "innolight_nvidia_optical_share": 0.5
     },
     "units": {
       "market_2024_busd": "USD billions (CY2024)",
       "market_2026_busd": "USD billions (CY2026)",
-      "innolight_yoy": "fraction YoY"
+      "innolight_yoy": "fraction YoY",
+      "innolight_nvidia_optical_share": "fraction of NVIDIA optical modules (>50%, approx)"
     }
   },
   "adjacency": [
@@ -42,7 +44,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Optical transceiver market sizing from research coverage as-of 2026. Confidence 0.6 by role (analyst market estimate). Auxiliary QoQ derived from the 2024->2026 market CAGR.",
+    "summary": "Optical transceiver market sizing from research coverage as-of 2026. Confidence 0.6 by role (analyst market estimate). Auxiliary QoQ derived from the 2024->2026 market CAGR. Enriched 2026-06-12 from the source registry (InnoLight >50% of NVIDIA optical); live page fetch returned HTTP 403 and was not circumvented.",
     "inputs": [],
     "code": null
   }

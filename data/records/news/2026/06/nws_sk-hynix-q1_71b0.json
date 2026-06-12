@@ -28,12 +28,14 @@
     "figures": {
       "revenue_qoq": 0.6,
       "revenue_yoy": 1.98,
-      "hbm_share": 0.57
+      "hbm_share": 0.57,
+      "revenue_krw_trillion": 52.58
     },
     "units": {
       "revenue_qoq": "fraction QoQ",
       "revenue_yoy": "fraction YoY",
-      "hbm_share": "fraction of DRAM revenue"
+      "hbm_share": "fraction of DRAM revenue",
+      "revenue_krw_trillion": "KRW trillions (Q1 2026 total revenue)"
     }
   },
   "adjacency": [
@@ -41,7 +43,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from SK hynix Q1 2026 business results as-of 2026-04-23. Confidence 0.8 by role (hard: audited company financials).",
+    "summary": "Transcribed from SK hynix Q1 2026 business results as-of 2026-04-23. Confidence 0.8 by role (hard: audited company financials). Enriched 2026-06-12 from the source registry (added absolute revenue KRW 52.58T); live page fetch returned HTTP 403 (bot-walled) and was not circumvented.",
     "inputs": [],
     "code": null
   }

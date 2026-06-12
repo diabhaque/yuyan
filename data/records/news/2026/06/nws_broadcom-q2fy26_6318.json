@@ -27,11 +27,13 @@
     ],
     "figures": {
       "ai_revenue_busd": 10.8,
-      "ai_revenue_yoy": 1.43
+      "ai_revenue_yoy": 1.43,
+      "q3_guide_ai_busd": 16
     },
     "units": {
       "ai_revenue_busd": "USD billions",
-      "ai_revenue_yoy": "fraction YoY"
+      "ai_revenue_yoy": "fraction YoY",
+      "q3_guide_ai_busd": "USD billions (Q3 FY2026 AI semiconductor revenue guidance)"
     }
   },
   "adjacency": [
@@ -39,7 +41,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from Broadcom fiscal-Q2-2026 results as-of 2026-06-05. Confidence 0.8 by role (hard). AI networking is a subset of Auxiliary (directional, not 1:1).",
+    "summary": "Transcribed from Broadcom fiscal-Q2-2026 results as-of 2026-06-05. Confidence 0.8 by role (hard). AI networking is a subset of Auxiliary (directional, not 1:1). Enriched 2026-06-12 from the source registry (added Q3 AI guidance ~$16B); live page fetch returned HTTP 403 (bot-walled) and was not circumvented.",
     "inputs": [],
     "code": null
   }

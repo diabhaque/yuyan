@@ -35,14 +35,15 @@
       "revenue_musd": "USD millions",
       "revenue_qoq": "fraction QoQ",
       "revenue_yoy": "fraction YoY"
-    }
+    },
+    "notes": "Growth driven by PCIe/CXL retimers, smart cable modules, and Scorpio scale-up fabric for AI rack connectivity."
   },
   "adjacency": [
     "pd_chip-spend-q1-estimates_ea34",
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from Astera Labs Q1 2026 results as-of 2026-05-05. Confidence 0.8 by role (hard: audited company financials). Adds independent connectivity data to Auxiliary.",
+    "summary": "Transcribed from Astera Labs Q1 2026 results as-of 2026-05-05. Confidence 0.8 by role (hard: audited company financials). Adds independent connectivity data to Auxiliary. Enriched 2026-06-12 from the source registry (product mix note); live page fetch returned HTTP 403 (bot-walled) and was not circumvented.",
     "inputs": [],
     "code": null
   }

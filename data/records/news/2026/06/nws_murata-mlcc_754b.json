@@ -34,11 +34,13 @@
       "mlcc_per_ai_server_x": [
         10,
         15
-      ]
+      ],
+      "price_effective_date": "2026-04-01"
     },
     "units": {
       "price_increase_range": "fraction [low,high]",
-      "mlcc_per_ai_server_x": "multiple (x) vs standard server [low,high]"
+      "mlcc_per_ai_server_x": "multiple (x) vs standard server [low,high]",
+      "price_effective_date": "date the MLCC price increase takes effect"
     }
   },
   "adjacency": [
@@ -46,7 +48,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from Murata MLCC capacity/price coverage as-of 2026-03-17. Confidence 0.8 by role (hard-price). Adds a passives price signal to Auxiliary for Q2.",
+    "summary": "Transcribed from Murata MLCC capacity/price coverage as-of 2026-03-17. Confidence 0.8 by role (hard-price). Adds a passives price signal to Auxiliary for Q2. Enriched 2026-06-12 from the source registry (price effective date 2026-04-01); Digitimes is bot-walled so the page was not fetched.",
     "inputs": [],
     "code": null
   }

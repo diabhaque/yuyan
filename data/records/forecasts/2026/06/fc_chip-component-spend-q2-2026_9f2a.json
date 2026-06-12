@@ -8,7 +8,7 @@
     "forecast",
     "2026-q2"
   ],
-  "ts_recorded": "2026-06-12T11:04:06Z",
+  "ts_recorded": "2026-06-12T11:28:09Z",
   "ts_applies": "2026-Q2",
   "confidence": 0.65,
   "source": "notebook:notebooks/chip_component_spend_v2.ipynb",

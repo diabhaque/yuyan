@@ -30,14 +30,15 @@
     },
     "units": {
       "semi_exports_yoy": "fraction YoY"
-    }
+    },
+    "notes": "~+200% YoY measured through the 20th of March 2026; record monthly semiconductor exports."
   },
   "adjacency": [
     "pd_chip-spend-q1-estimates_ea34",
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Korea Ministry of Trade / customs semiconductor export growth as-of 2026-04-01. Confidence 0.8 (official government trade statistics). Used as a binary confirmation (>100% YoY) in the macro pace tilt.",
+    "summary": "Korea Ministry of Trade / customs semiconductor export growth as-of 2026-04-01. Confidence 0.8 (official government trade statistics). Used as a binary confirmation (>100% YoY) in the macro pace tilt. Enriched 2026-06-12 from the source registry (through-20th measurement, record monthly note); live page fetch returned HTTP 403 and was not circumvented.",
     "inputs": [],
     "code": null
   }

@@ -39,14 +39,15 @@
     "units": {
       "capacity_end2025_wpm_range": "thousand wafers per month [low,high]",
       "capacity_end2026_wpm_range": "thousand wafers per month [low,high]"
-    }
+    },
+    "notes": "2026 CoWoS capacity reported fully booked; ASP rising. TSMC sees AI wafer demand ~11x 2022->2026; targets CoWoS supporting 24 HBM stacks by 2029."
   },
   "adjacency": [
     "pd_chip-spend-q1-estimates_ea34",
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from TrendForce CoWoS capacity coverage as-of 2026-05-14. Confidence 0.8 by role (hard). Packaging QoQ derived as the quarterly CAGR of midpoint capacity end-2025 -> end-2026.",
+    "summary": "Transcribed from TrendForce CoWoS capacity coverage as-of 2026-05-14. Confidence 0.8 by role (hard). Packaging QoQ derived as the quarterly CAGR of midpoint capacity end-2025 -> end-2026. Enriched 2026-06-12 from the source registry (fully-booked / ASP-rising / 11x-wafer-demand notes); TrendForce is bot-walled so the page was not fetched.",
     "inputs": [],
     "code": null
   }

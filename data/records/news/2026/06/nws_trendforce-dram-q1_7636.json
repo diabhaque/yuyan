@@ -52,14 +52,15 @@
       "nand_qoq_range": "fraction QoQ [low,high]",
       "essd_qoq_range": "fraction QoQ [low,high]",
       "prior_dram_estimate_range": "fraction QoQ [low,high]"
-    }
+    },
+    "notes": "HBM contract pricing is tight but governed by long-term agreements (LTAs), so it is less spot-exposed than conventional DRAM; NAND also rising."
   },
   "adjacency": [
     "pd_chip-spend-q1-estimates_ea34",
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from TrendForce's 1Q26 contract-price press release as-of 2026-02-02. Confidence 0.8 by role (hard-price). Server DRAM used as a documented proxy for HBM (HBM-specific QoQ not disclosed); likely an upper bound since HBM is LTA-priced.",
+    "summary": "Transcribed from TrendForce's 1Q26 contract-price press release as-of 2026-02-02. Confidence 0.8 by role (hard-price). Server DRAM used as a documented proxy for HBM (HBM-specific QoQ not disclosed); likely an upper bound since HBM is LTA-priced. Enriched 2026-06-12 from the source registry (HBM/LTA note); TrendForce is bot-walled so the page was not fetched.",
     "inputs": [],
     "code": null
   }

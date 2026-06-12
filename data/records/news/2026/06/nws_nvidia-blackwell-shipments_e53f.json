@@ -30,12 +30,16 @@
     "figures": {
       "racks_2026": 60000,
       "gpus_2026": 4300000,
-      "blackwell_share": 0.71
+      "blackwell_share": 0.71,
+      "backlog_gpus": 3600000,
+      "sold_out_through": "2026-mid"
     },
     "units": {
       "racks_2026": "racks (units, CY2026)",
       "gpus_2026": "GPUs (units, CY2026)",
-      "blackwell_share": "fraction of GPU shipments"
+      "blackwell_share": "fraction of GPU shipments",
+      "backlog_gpus": "GPUs (order backlog, units)",
+      "sold_out_through": "period capacity is sold out through"
     }
   },
   "adjacency": [
@@ -43,7 +47,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Analyst shipment estimate as-of 2025-12-29. Confidence 0.6 by role (analyst projection, not company-reported).",
+    "summary": "Analyst shipment estimate as-of 2025-12-29. Confidence 0.6 by role (analyst projection, not company-reported). Enriched 2026-06-12 from the source registry (added 3.6M-GPU backlog, sold out to mid-2026); source page (biggo) is bot-walled and was not fetched.",
     "inputs": [],
     "code": null
   }

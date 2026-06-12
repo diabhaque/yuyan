@@ -31,13 +31,15 @@
       "total_rev_busd": 81.6,
       "total_yoy": 0.85,
       "dc_share": 0.9,
-      "dc_yoy_approx": 1.0
+      "dc_yoy_approx": 1.0,
+      "dc_revenue_busd_approx": 73
     },
     "units": {
       "total_rev_busd": "USD billions",
       "total_yoy": "fraction YoY",
       "dc_share": "fraction of revenue",
-      "dc_yoy_approx": "fraction YoY (approx)"
+      "dc_yoy_approx": "fraction YoY (approx)",
+      "dc_revenue_busd_approx": "USD billions (data-center revenue, approx)"
     }
   },
   "adjacency": [
@@ -45,7 +47,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Transcribed from NVIDIA fiscal-Q1-2027 results as-of 2026-05-20. Used as a directional buyer-demand scaler (NVIDIA's per-component split is not disclosed), hence confidence 0.4 by role (qualitative).",
+    "summary": "Transcribed from NVIDIA fiscal-Q1-2027 results as-of 2026-05-20. Used as a directional buyer-demand scaler (NVIDIA's per-component split is not disclosed), hence confidence 0.4 by role (qualitative). Enriched 2026-06-12 from the source registry (data-center revenue ~$73B); live page fetch returned HTTP 403 (bot-walled) and was not circumvented.",
     "inputs": [],
     "code": null
   }

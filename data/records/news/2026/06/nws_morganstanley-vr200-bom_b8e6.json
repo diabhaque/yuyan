@@ -33,13 +33,21 @@
       "memory_per_rack_growth_x": 4.35,
       "memory_share_vr200": 0.26,
       "pcb_growth_x": 2.33,
-      "mlcc_growth_x": 1.82
+      "mlcc_growth_x": 1.82,
+      "rack_bom_usd_from": 4000000,
+      "rack_bom_usd_to": 7800000,
+      "gpu_growth_x": 1.57,
+      "abf_growth_x": 1.82
     },
     "units": {
       "memory_per_rack_growth_x": "multiple (x) gen-over-gen",
       "memory_share_vr200": "fraction of system BoM",
       "pcb_growth_x": "multiple (x) gen-over-gen",
-      "mlcc_growth_x": "multiple (x) gen-over-gen"
+      "mlcc_growth_x": "multiple (x) gen-over-gen",
+      "rack_bom_usd_from": "USD (GB300 NVL72 rack bill-of-materials)",
+      "rack_bom_usd_to": "USD (VR200 NVL72 rack bill-of-materials)",
+      "gpu_growth_x": "multiple (x) gen-over-gen (+57%)",
+      "abf_growth_x": "multiple (x) gen-over-gen (ABF substrate, +82%)"
     }
   },
   "adjacency": [
@@ -47,7 +55,7 @@
     "pd_chip-spend-q2-estimates_1f45"
   ],
   "methodology": {
-    "summary": "Morgan Stanley VR200 NVL72 rack BoM via coverage as-of 2026-06. Confidence 0.6 by role (analyst). It is a rack/system BoM (broader than Epoch chip-component scope) and VR200 ramps H2 2026, so used as a memory-share trajectory / upside tilt for Q2, not the Q2 base mix.",
+    "summary": "Morgan Stanley VR200 NVL72 rack BoM via coverage as-of 2026-06. Confidence 0.6 by role (analyst). It is a rack/system BoM (broader than Epoch chip-component scope) and VR200 ramps H2 2026, so used as a memory-share trajectory / upside tilt for Q2, not the Q2 base mix. Enriched 2026-06-12 from the source registry (rack BoM $4.0M->$7.8M, GPU +57%, ABF +82%); Tom's Hardware is bot-walled so the page was not fetched.",
     "inputs": [],
     "code": null
   }
