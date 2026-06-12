@@ -9,8 +9,9 @@ wheels/
 # Virtual environments
 .venv
 
-# Pipeline data (raw downloads + processed outputs; reproducible via pipelines)
-data/
+# Record datastore (data/records + data/blobs) is committed.
+# Pre-refactor data lives in data_old/ (large, untracked, reproducible) and is not committed.
+data_old/
 
 # Local Claude Code settings
 .claude/settings.local.json
