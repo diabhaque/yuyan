@@ -88,3 +88,46 @@ fc_…-q1-2026 ──> fc_…-q2-2026   (Q2 chains off the Q1 nowcast)
 ```
 The notebook reads every input by scanning `data/records/` (tag `chip-component-spend`) and writes
 its forecast back as the `fc_…` records above.
+
+## Soft locks — `data/records/_locks.json`
+A single JSON object (starts `{}`) so two agents don't improve the same record at once. Keyed by
+record id:
+```json
+{ "fc_sox-index_a1b2": { "agent": "builder", "since": "2026-06-13T10:00:00Z",
+                         "ttl_minutes": 30, "note": "sourcing PHLX value" } }
+```
+- **Acquire** — read the file; if your id is present and not stale, back off (pick another target);
+  else add your entry and write back.
+- **Release** — remove your entry on completion (success *or* abort).
+- **Stale reclaim** — an entry past `since + ttl_minutes` may be overwritten.
+- **Contention** — the file is shared, so the orchestrator hands each parallel agent a **disjoint**
+  set of target ids; concurrent writers never touch the same lock. (Don't overengineer at this scale.)
+
+Files named `_*` under `data/records/` (`_locks.json`, `_cultivate_log.jsonl`) are orchestration
+bookkeeping, **not records** — scans skip them.
+
+## Agents & the cultivation loop
+The store is cultivated by four subagents (`.claude/agents/`), each also runnable standalone via a
+slash command (`.claude/commands/`), and orchestrated by `/cultivate`:
+- **thinker** (`/think "<goal>"`) — *propose.* Decomposes a goal into a **metric graph**, scans for
+  what exists, and writes **proposal records** for what's missing.
+- **builder** (`/build [id]`) — *improve.* Raises a record's confidence by sourcing or computing its
+  value; may build pipelines/blobs and expand the graph.
+- **verifier** (`/verify [scope]`) — *cross-check.* Source reliability, figure↔source factuality,
+  and cross-record logical consistency (`total == Σ parts`). Flags, never silently rewrites.
+- **organizer** (`/organize [scope]`) — *tidy.* Envelope repair, edge health, dedup/consolidation,
+  pruning, tag hygiene.
+
+`/cultivate "<goal>" [--max-cycles N]` runs the **dynamic loop**: **sense** the datastore (ad-hoc
+scan — counts, confidence histogram, priority queue, orphans, invariant violations, active locks,
+goal coverage) → **decide** which agents to dispatch from that snapshot → **act** (parallel where
+lock-disjoint) → **integrate** (log to `_cultivate_log.jsonl`) → **loop** until converged or capped.
+
+### Conventions the loop relies on
+- **Proposal record** — a thinker's stub: `confidence: 0`, a **placeholder value with units**, and
+  `inputs`/`adjacency` edges describing where its real value will come from. (`confidence 0` is the
+  only legitimate use of zero — see the envelope rules.) A builder later fills it and raises confidence.
+- **Metric graph** — just the `inputs`/`adjacency` edges. Identities are **bidirectional**
+  (`total = a + b` ⇒ `a = total − b`); information flows from higher- to lower-confidence nodes.
+- **Builder priority** — work the **lowest confidence first, ties broken by highest degree**
+  (`|inputs| + |adjacency|`): the weakest, most-depended-on metrics first.
